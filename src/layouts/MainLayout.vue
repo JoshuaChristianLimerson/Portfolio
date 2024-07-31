@@ -31,8 +31,8 @@
     >
       <!-- <router-view /> -->
       <div class="column">
-        <transition appear enter-active-class="animated zoomIn slower">
-          <q-card bordered class="my-card q-px-xl">
+        <q-card bordered class="my-card q-px-xl">
+          <div class="card-content">
             <q-card-section>
               <h1 class="text-white text-bold q-pb-none">
                 Joshua Christian Limerson
@@ -82,8 +82,8 @@
                 </a>
               </div>
             </q-card-section>
-          </q-card>
-        </transition>
+          </div>
+        </q-card>
       </div>
     </q-page-container>
   </q-layout>
@@ -144,6 +144,11 @@ onMounted(() => {
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: box-shadow 0.3s ease; /* Transition for box-shadow */
+}
+
+.my-card:hover {
+  box-shadow: 0 6px 40px rgba(0, 0, 0, 0.2); /* Enhanced shadow for zoom effect */
 }
 
 .card {
