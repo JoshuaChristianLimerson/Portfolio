@@ -6,7 +6,7 @@
       class="rounded-borders fixed-top"
       :style="{ height: drawer ? '100vh' : '90px', zIndex: 99 }"
     >
-      <q-header class="text-white" style="background: transparent">
+      <q-header class="text-white my-header">
         <q-toolbar class="row justify-center">
           <q-tabs
             v-model="tab"
@@ -111,10 +111,7 @@
             <div class="row justify-center">
               <p class="text-h5">
                 I am
-                <span
-                  class="typed text-info"
-                  :data-typed-items="typedStrings"
-                ></span>
+                <span class="typed" :data-typed-items="typedStrings"></span>
               </p>
             </div>
           </q-card-section>
@@ -146,8 +143,27 @@
                   ></path>
                 </svg>
               </a>
+
+              <a class="socialContainer containerFour" href="#">
+                <svg viewBox="0 0 16 16" class="socialSvg emailSvg">
+                  <path
+                    d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"
+                  ></path>
+                  <path
+                    d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648m-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z"
+                  ></path>
+                </svg>
+              </a>
             </div>
           </q-card-section>
+          <q-card-section class="row justify-center"
+            ><q-btn color="primary" push>
+              <div class="row items-center">
+                <q-icon left name="map" />
+                <div class="text-center">Learn More</div>
+              </div>
+            </q-btn></q-card-section
+          >
         </div>
       </q-card>
     </div>
@@ -199,7 +215,7 @@ const moveTo = (id: string) => {
 .gradient-background {
   height: 100vh; /* Full height */
   width: 100vw; /* Full width */
-  background: linear-gradient(45deg, #d42274, #225ad4, #ff9900);
+  background: linear-gradient(45deg, #d42274, #3a7bd5, #d4d122);
   background-size: 600% 600%;
   animation: GradientBackground 30s ease infinite;
 }
@@ -214,6 +230,15 @@ const moveTo = (id: string) => {
   100% {
     background-position: 0% 50%;
   }
+}
+
+.my-header {
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .my-card {
@@ -261,7 +286,7 @@ const moveTo = (id: string) => {
 }
 /* twitter*/
 .containerTwo:hover {
-  background-color: #00acee;
+  background-color: #0d1117;
   transition-duration: 0.3s;
 }
 /* linkdin*/
@@ -271,7 +296,7 @@ const moveTo = (id: string) => {
 }
 /* Whatsapp*/
 .containerFour:hover {
-  background-color: #128c7e;
+  background-color: #f90101;
   transition-duration: 0.3s;
 }
 
