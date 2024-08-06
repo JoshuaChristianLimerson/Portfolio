@@ -7,19 +7,20 @@
       :style="{ height: drawer ? '100vh' : '90px', zIndex: 99 }"
     >
       <q-header class="text-white my-header">
-        <q-toolbar class="row justify-center">
+        <q-toolbar class="row justify-between">
+          <q-space v-if="$q.screen.gt.xs" />
           <q-tabs
             v-model="tab"
             v-if="$q.screen.gt.xs"
             active-color="dark"
             indicator-color="dark"
           >
-            <q-tab name="tab1" label="Home" @click="moveTo('home')" />
-            <q-tab name="tab2" label="Features" @click="moveTo('features')" />
+            <q-tab name="home" label="Home" @click="moveTo('home')" />
+            <q-tab name="about" label="About Me" @click="moveTo('about')" />
             <q-tab
-              name="tab3"
-              label="Contact Us"
-              @click="moveTo('contact-us')"
+              name="projects"
+              label="Projects"
+              @click="moveTo('projects')"
             />
           </q-tabs>
           <q-btn
@@ -31,6 +32,7 @@
             color="black"
             v-if="$q.screen.xs"
           />
+          <q-space />
         </q-toolbar>
       </q-header>
       <q-drawer
@@ -49,20 +51,20 @@
               <q-item-section> Home </q-item-section>
             </q-item>
 
-            <q-item active clickable v-ripple @click="moveTo('features')">
+            <q-item active clickable v-ripple @click="moveTo('about')">
               <q-item-section avatar>
                 <q-icon name="star" />
               </q-item-section>
 
-              <q-item-section> Features </q-item-section>
+              <q-item-section> About Me </q-item-section>
             </q-item>
 
-            <q-item clickable v-ripple @click="moveTo('contact-us')">
+            <q-item clickable v-ripple @click="moveTo('projects')">
               <q-item-section avatar>
                 <q-icon name="drafts" />
               </q-item-section>
 
-              <q-item-section> Contact Us </q-item-section>
+              <q-item-section> Projects </q-item-section>
             </q-item>
           </q-list>
         </q-scroll-area>
@@ -90,7 +92,7 @@
       </q-list>
     </q-drawer> -->
 
-  <div class="gradient-background row justify-center items-center">
+  <div class="gradient-background row justify-center items-center" id="home">
     <!-- <router-view /> -->
     <div class="column" style="padding-left: 7px; padding-right: 7px">
       <q-card bordered class="my-card q-px-lg">
@@ -118,7 +120,7 @@
 
           <q-separator inset />
 
-          <q-card-section class="row justify-center">
+          <q-card-section class="row justify-center q-pa-none">
             <div class="socialList">
               <a class="socialContainer containerOne" href="#">
                 <svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
@@ -157,10 +159,12 @@
             </div>
           </q-card-section>
           <q-card-section class="row justify-center"
-            ><q-btn color="primary" push>
+            ><q-btn color="primary" push class="bounceBtn">
               <div class="row items-center">
-                <q-icon left name="map" />
-                <div class="text-center">Learn More</div>
+                <q-icon left name="keyboard_arrow_down" />
+                <div class="text-center" @click="moveTo('about')">
+                  Learn More
+                </div>
               </div>
             </q-btn></q-card-section
           >
@@ -168,6 +172,8 @@
       </q-card>
     </div>
   </div>
+  <div style="min-height: 100vh; background-color: #fbff00" id="about"></div>
+  <div style="min-height: 100vh; background-color: #51ff00" id="projects"></div>
 </template>
 
 <script setup lang="ts">
@@ -193,8 +199,40 @@ onMounted(() => {
       });
     }
   }
+
+  const sections = [
+    { id: 'home', element: document.getElementById('home') },
+    { id: 'features', element: document.getElementById('about') },
+    { id: 'contact-us', element: document.getElementById('projects') },
+  ];
+
+  const showContact = ref(false);
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          tab.value = entry.target.id;
+          if (entry.target.id === 'contact-us') {
+            showContact.value = true;
+          } else {
+            showContact.value = false;
+          }
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0.1,
+    }
+  );
+
+  sections.forEach((section) => {
+    if (section.element) {
+      observer.observe(section.element);
+    }
+  });
 });
-const tab = ref('tab1');
+const tab = ref('home');
 
 const drawer = ref(false);
 const moveTo = (id: string) => {
@@ -234,21 +272,21 @@ const moveTo = (id: string) => {
 
 .my-header {
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .my-card {
   /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.25);
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   transition: box-shadow 0.3s ease; /* Transition for box-shadow */
 }
 
@@ -326,6 +364,41 @@ const moveTo = (id: string) => {
   100% {
     transform: translateY(0);
     opacity: 1;
+  }
+}
+
+.bounceBtn {
+  animation: pulse 1s infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+  40% {
+    -moz-transform: translateY(-10px);
+    -ms-transform: translateY(-10px);
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+  }
+  60% {
+    -moz-transform: translateY(-5px);
+    -ms-transform: translateY(-5px);
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
   }
 }
 </style>
