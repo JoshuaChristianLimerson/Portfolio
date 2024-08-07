@@ -172,8 +172,12 @@
       </q-card>
     </div>
   </div>
-  <div style="min-height: 100vh; background-color: #fbff00" id="about"></div>
-  <div style="min-height: 100vh; background-color: #51ff00" id="projects"></div>
+  <div style="background-color: #fbff00" id="about" class="background-size">
+    test
+  </div>
+  <div style="background-color: #51ff00" id="projects" class="background-size">
+    test
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -250,6 +254,10 @@ const moveTo = (id: string) => {
 </script>
 
 <style scoped>
+.background-size {
+  height: 100vh; /* Full height */
+  width: 100vw; /* Full width */
+}
 .gradient-background {
   height: 100vh; /* Full height */
   width: 100vw; /* Full width */
