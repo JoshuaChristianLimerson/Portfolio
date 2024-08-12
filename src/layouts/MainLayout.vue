@@ -174,51 +174,60 @@
         </q-card>
       </div>
     </div>
-    <div
-      style="background-color: #ffffff"
-      id="about"
-      class="background-size row"
-    >
-      <transition
-        appear
-        enter-active-class="animated fadeInLeftBig slower"
-        leave-active-class="animated fadeInRightBig slower"
-      >
-        <div class="col-12 col-md-4 column container-about-image">
-          <q-img
-            src="../assets/polaroid.png"
-            style="
-              width: 400px;
-              max-width: 100%;
-              object-fit: contain;
-              object-position: center;
-              align-items: center;
-            "
-          />
-        </div>
-      </transition>
-      <transition
-        appear
-        enter-active-class="animated fadeInRightBig slower"
-        leave-active-class="animated fadeOut"
-      >
-        <div
-          class="col-12 col-md-8 column container-about-desc"
-          style="max-width: 100%"
+    <div style="background-color: #ffffff" id="about">
+      <div class="background-size row">
+        <transition
+          appear
+          enter-active-class="animated fadeInLeftBig slower"
+          leave-active-class="animated fadeInRightBig slower"
         >
-          <div class="" style="max-width: 100%">
-            <p class="text-center" style="max-width: 100%">
-              testing
-              <span class="linear-wipe"> lorem ipsum </span>
-              consectetur adipiscing elit,
-            </p>
-            <p class="text-grey text-subtitle1 text-weight-bold q-py-md">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+          <div
+            class="col-12 col-md-4 column container-about-image justify-center"
+            style="max-width: 100%; z-index: 2"
+          >
+            <q-img
+              src="../assets/polaroid.png"
+              style="
+                width: 400px;
+                max-width: 100%;
+                object-fit: contain;
+                object-position: center;
+                align-items: center;
+              "
+            />
           </div>
-        </div>
-      </transition>
+        </transition>
+        <transition
+          appear
+          enter-active-class="animated fadeInRightBig slower"
+          leave-active-class="animated fadeOut"
+        >
+          <div
+            class="col-12 col-md-8 column container-about-desc"
+            style="max-width: 100%; z-index: 2"
+          >
+            <div class="" style="max-width: 100%">
+              <p class="text-primary text-weight-medium">
+                I am Joshua Christian Limerson,
+              </p>
+              <p class="text-blue-grey text-subtitle1 q-pr-xl text-justify">
+                I am a graduate Computer Science (Global Class) student on BINUS
+                UNIVERSITY. My passion on Computer Science subject itself lies
+                on UI/UX Designer and Front-End Development. That includes
+                designing, creating, and building as a whole Front-end
+                operation. I am also intrigued in the scope of cinematography
+                and editing that includes video editing, photo editing, and
+                animation. I would say that I'm a fast learner and willing to
+                learn anything. And always wanted to learn more about how can I
+                improve my passion and ideas and to see new opportunities to
+                expand my skills in every aspect.
+              </p>
+            </div>
+          </div>
+        </transition>
+        <div class="col-12 container-about-divider">test</div>
+      </div>
+      <div class="bg-red" style="height: 100vh">test</div>
     </div>
     <div
       style="background-color: #b2beb5"
@@ -346,6 +355,20 @@ const moveTo = (id: string) => {
 .background-size {
   height: 100vh; /* Full height */
   width: 100vw; /* Full width */
+  position: relative;
+}
+
+.container-about-divider {
+  position: absolute; /* Absolute positioning */
+  bottom: 30%; /* 20% from the bottom of the parent */
+  left: 0; /* Align left */
+  right: 0; /* Align right */
+  background-image: linear-gradient(
+    #1976d2,
+    #42a5f0
+  ); /* Example background color */
+  text-align: center; /* Center text */
+  padding: 10px; /* Add some padding */
 }
 .gradient-background {
   height: 100vh; /* Full height */
@@ -630,12 +653,11 @@ const moveTo = (id: string) => {
     }
 
     .container-about-desc {
-      justify-content: center;
+      padding-top: 5%;
       p:nth-child(1) {
         font-size: 36px;
       }
       p:nth-child(2) {
-        text-align: center;
         font-size: 20px;
       }
     }
