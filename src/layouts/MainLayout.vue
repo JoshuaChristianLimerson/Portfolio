@@ -3,8 +3,8 @@
     <q-layout
       view="hHh Lpr lff"
       container
-      class="rounded-borders fixed-top"
-      :style="{ height: drawer ? '100vh' : '90px', zIndex: 99 }"
+      class="fixed-top"
+      :style="{ height: drawer ? '100vh' : '90px', zIndex: 2 }"
     >
       <q-header class="text-white my-header">
         <q-toolbar class="row justify-between">
@@ -174,11 +174,54 @@
         </q-card>
       </div>
     </div>
-    <div style="background-color: #ffffff" id="about" class="background-size">
-      <q-img src="../assets/polaroid.png" width="400px" />
+    <div
+      style="background-color: #ffffff"
+      id="about"
+      class="background-size row"
+    >
+      <transition
+        appear
+        enter-active-class="animated fadeInLeftBig slower"
+        leave-active-class="animated fadeInRightBig slower"
+      >
+        <div class="col-12 col-md-4 column container-about-image">
+          <q-img
+            src="../assets/polaroid.png"
+            style="
+              width: 400px;
+              max-width: 100%;
+              object-fit: contain;
+              object-position: center;
+              align-items: center;
+            "
+          />
+        </div>
+      </transition>
+      <transition
+        appear
+        enter-active-class="animated fadeInRightBig slower"
+        leave-active-class="animated fadeOut"
+      >
+        <div
+          class="col-12 col-md-8 column container-about-desc"
+          style="max-width: 100%"
+        >
+          <div class="" style="max-width: 100%">
+            <p class="text-center" style="max-width: 100%">
+              testing
+              <span class="linear-wipe"> lorem ipsum </span>
+              consectetur adipiscing elit,
+            </p>
+            <p class="text-grey text-subtitle1 text-weight-bold q-py-md">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </div>
+      </transition>
     </div>
     <div
-      style="background-color: #51ff00"
+      style="background-color: #b2beb5"
       id="projects"
       class="background-size"
     >
@@ -546,6 +589,56 @@ const moveTo = (id: string) => {
 
   to {
     opacity: 0.5;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #about {
+    min-height: 100vh;
+    .container-about-desc {
+      justify-content: space-around;
+      p:nth-child(1) {
+        font-size: 30px;
+      }
+      p:nth-child(2) {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  #about {
+    min-height: 100vh;
+    .container-about-desc {
+      justify-content: space-between;
+      p:nth-child(1) {
+        font-size: 36px;
+      }
+      p:nth-child(2) {
+        text-align: center;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #about {
+    .container-about-image {
+      justify-content: center;
+    }
+
+    .container-about-desc {
+      justify-content: center;
+      p:nth-child(1) {
+        font-size: 36px;
+      }
+      p:nth-child(2) {
+        text-align: center;
+        font-size: 20px;
+      }
+    }
   }
 }
 </style>
