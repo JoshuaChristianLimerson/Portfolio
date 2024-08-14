@@ -165,7 +165,7 @@
                 <div class="row items-center">
                   <q-icon left name="keyboard_arrow_down" />
                   <div class="text-center" @click="moveTo('about')">
-                    Learn More
+                    Learn More click here
                   </div>
                 </div>
               </q-btn></q-card-section
