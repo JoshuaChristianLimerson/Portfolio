@@ -225,7 +225,10 @@
             </div>
           </div>
         </transition>
-        <div class="col-12 container-about-divider">test</div>
+        <div class="col-12 container-about-divider">
+          <q-space class="col-12 col-md-4" v-if="$q.screen.gt.xs" />
+          <div class="col-12 col-md-8">test</div>
+        </div>
       </div>
       <div class="bg-red" style="height: 100vh">test</div>
     </div>
