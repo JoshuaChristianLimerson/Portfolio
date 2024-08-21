@@ -225,19 +225,21 @@
             </div>
           </div>
         </transition>
-        <div class="col-12 container-about-divider">
+        <div class="row container-about-divider">
           <q-space class="col-12 col-md-4" v-if="$q.screen.gt.xs" />
-          <div class="col-12 col-md-8">test</div>
+          <div class="col-12 col-md-8 q-px-md">
+            <ChipList :chips="chips" />
+          </div>
         </div>
       </div>
-      <div class="bg-red" style="height: 100vh">test</div>
+      <div class="bg-red" style="height: 100vh"></div>
     </div>
     <div
       style="background-color: #b2beb5"
       id="projects"
       class="background-size"
     >
-      test
+      projects page
     </div>
   </div>
   <div v-if="!reachedBottom" class="scrolldown" style="--color: #0563bb">
@@ -258,10 +260,13 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
+import ChipList from 'src/components/ChipList.vue';
 import Typed from 'typed.js';
 
+import figma from 'src/assets/Figma-logo.png';
+
 const typedStrings =
-  'a Designer, an Editor, a Developer, a Freelancer, an Undergraduate'; // This could be dynamic as well
+  'a Designer, an Editor, a Developer, a Freelancer, a Graduate'; // This could be dynamic as well
 
 const reachedBottom = ref<boolean>(false);
 
@@ -349,6 +354,22 @@ const moveTo = (id: string) => {
     }, 25);
   }
 };
+
+// Define the chip data
+const chips = [
+  { color: 'grey-10', text: 'Figma', image: figma },
+  { color: 'orange', text: 'html5' },
+  { color: 'blue', text: 'css' },
+  { color: 'yellow', text: 'javascript' },
+  { color: 'blue', text: 'typescript' },
+  { color: 'green', text: 'vue3' },
+  { color: 'blue', text: 'photoshop' },
+  { color: 'purple', text: 'premier pro' },
+  { color: 'purple', text: 'after effect' },
+  { color: 'orange', text: 'Microsoft Office' },
+  { color: 'blue', text: 'Canva' },
+  { color: 'orange', text: 'Git' },
+];
 </script>
 
 <style scoped>
@@ -370,7 +391,6 @@ const moveTo = (id: string) => {
     #1976d2,
     #42a5f0
   ); /* Example background color */
-  text-align: center; /* Center text */
   padding: 10px; /* Add some padding */
 }
 .gradient-background {
