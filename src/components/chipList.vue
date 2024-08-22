@@ -1,10 +1,10 @@
 <template>
   <div>
     <q-chip
-      v-for="chip in chips"
+      v-for="chip in props.chips"
       :key="chip.text"
       :color="chip.color"
-      text-color="white"
+      class="text-subtitle1"
     >
       <q-icon style="margin-right: 5px"> <q-img :src="chip.image" /> </q-icon>
       {{ chip.text }}

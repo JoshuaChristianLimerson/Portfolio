@@ -165,7 +165,7 @@
                 <div class="row items-center">
                   <q-icon left name="keyboard_arrow_down" />
                   <div class="text-center" @click="moveTo('about')">
-                    Learn More click here
+                    Learn More
                   </div>
                 </div>
               </q-btn></q-card-section
@@ -228,6 +228,7 @@
         <div class="row container-about-divider">
           <q-space class="col-12 col-md-4" v-if="$q.screen.gt.xs" />
           <div class="col-12 col-md-8 q-px-md">
+            <p class="text-white text-h5 text-weight-medium">Skills</p>
             <ChipList :chips="chips" />
           </div>
         </div>
@@ -260,10 +261,21 @@
 
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue';
-import ChipList from 'src/components/ChipList.vue';
+import ChipList from 'src/components/chipList.vue';
 import Typed from 'typed.js';
 
 import figma from 'src/assets/Figma-logo.png';
+import html from 'src/assets/HTML5-Badge.png';
+import css from 'src/assets/CSS3-logo.png';
+import javascript from 'src/assets/Javascript-logo.png';
+import typescript from 'src/assets/Typescript-logo.png';
+import vue3 from 'src/assets/Vue-logo.png';
+import photoshop from 'src/assets/Photoshop.png';
+import premierpro from 'src/assets/AdobePP-icon.png';
+import aftereffect from 'src/assets/AdobeAE-icon.png';
+import msoffice from 'src/assets/MSOffice-logo.png';
+import canva from 'src/assets/Canva-icon.png';
+import git from 'src/assets/Git-Icon.png';
 
 const typedStrings =
   'a Designer, an Editor, a Developer, a Freelancer, a Graduate'; // This could be dynamic as well
@@ -357,18 +369,18 @@ const moveTo = (id: string) => {
 
 // Define the chip data
 const chips = [
-  { color: 'grey-10', text: 'Figma', image: figma },
-  { color: 'orange', text: 'html5' },
-  { color: 'blue', text: 'css' },
-  { color: 'yellow', text: 'javascript' },
-  { color: 'blue', text: 'typescript' },
-  { color: 'green', text: 'vue3' },
-  { color: 'blue', text: 'photoshop' },
-  { color: 'purple', text: 'premier pro' },
-  { color: 'purple', text: 'after effect' },
-  { color: 'orange', text: 'Microsoft Office' },
-  { color: 'blue', text: 'Canva' },
-  { color: 'orange', text: 'Git' },
+  { color: '#e9e9e9', text: 'Figma', image: figma },
+  { color: '#e9e9e9', text: 'HTML5', image: html },
+  { color: '#e9e9e9', text: 'CSS', image: css },
+  { color: '#e9e9e9', text: 'Javascript', image: javascript },
+  { color: '#e9e9e9', text: 'Typescript', image: typescript },
+  { color: '#e9e9e9', text: 'Vue3', image: vue3 },
+  { color: '#e9e9e9', text: 'Photoshop', image: photoshop },
+  { color: '#e9e9e9', text: 'Premier pro', image: premierpro },
+  { color: '#e9e9e9', text: 'After Effect', image: aftereffect },
+  { color: '#e9e9e9', text: 'Microsoft Office', image: msoffice },
+  { color: '#e9e9e9', text: 'Canva', image: canva },
+  { color: '#e9e9e9', text: 'Git', image: git },
 ];
 </script>
 
