@@ -206,22 +206,67 @@
             class="col-12 col-md-8 column container-about-desc"
             style="max-width: 100%; z-index: 2"
           >
-            <div class="" style="max-width: 100%">
+            <div style="max-width: 100%">
               <p class="text-primary text-weight-medium">
                 I am Joshua Christian Limerson,
               </p>
               <p class="text-blue-grey text-subtitle1 q-pr-xl text-justify">
                 I am a graduate Computer Science (Global Class) student on BINUS
                 UNIVERSITY. My passion on Computer Science subject itself lies
-                on UI/UX Designer and Front-End Development. That includes
-                designing, creating, and building as a whole Front-end
-                operation. I am also intrigued in the scope of cinematography
-                and editing that includes video editing, photo editing, and
-                animation. I would say that I'm a fast learner and willing to
-                learn anything. And always wanted to learn more about how can I
-                improve my passion and ideas and to see new opportunities to
-                expand my skills in every aspect.
+                on UI/UX Designer, Front-End Development, and animations. I
+                always wanted to learn more about how can I improve my passion
+                and ideas and to see new opportunities to expand my skills in
+                every aspect.
               </p>
+            </div>
+            <div style="height: 200px" v-if="$q.screen.gt.xs"></div>
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <ul class="q-pl-none">
+                  <li class="q-pb-sm">
+                    <q-icon name="chevron_right" size="sm" color="primary" />
+                    <strong class="text-h6 q-pr-md">Birth Date:</strong>
+                    <span class="text-h6 text-weight-light"
+                      >Singapore, 25 April 2001</span
+                    >
+                  </li>
+                  <li class="q-pb-sm">
+                    <q-icon name="chevron_right" size="sm" color="primary" />
+                    <strong class="text-h6 q-pr-md">Phone:</strong>
+                    <span class="text-h6 text-weight-light"
+                      >+(62) 895 330 690 960</span
+                    >
+                  </li>
+                  <li class="q-pb-sm">
+                    <q-icon name="chevron_right" size="sm" color="primary" />
+                    <strong class="text-h6 q-pr-md">City:</strong>
+                    <span class="text-h6 text-weight-light"
+                      >Batam, Indonesia</span
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-12 col-md-6">
+                <ul class="q-pl-none">
+                  <li class="q-pb-sm">
+                    <q-icon name="chevron_right" size="sm" color="primary" />
+                    <strong class="text-h6 q-pr-md">Age:</strong>
+                    <span class="text-h6 text-weight-light">21</span>
+                  </li>
+                  <li class="q-pb-sm">
+                    <q-icon name="chevron_right" size="sm" color="primary" />
+                    <strong class="text-h6 q-pr-md">Email:</strong>
+                    <span class="text-h6 text-weight-light"
+                      >jcljoshualim@gmail.com</span
+                    >
+                  </li>
+                  <li class="q-pb-sm">
+                    <q-icon name="chevron_right" size="sm" color="primary" />
+                    <strong class="text-h6 q-pr-md">Freelance:</strong>
+                    <span class="text-h6 text-weight-light">Available</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </transition>
@@ -241,6 +286,37 @@
       class="background-size"
     >
       projects page
+      <div class="row justify-center q-px-lg">
+        <div
+          v-for="(card, index) in cardsContent"
+          :key="index"
+          class="col-12 col-md-4 q-pa-md"
+        >
+          <q-card style="border-radius: 12px">
+            <q-card-section class="q-pb-none">
+              <div class="text-h6 q-pb-sm">{{ card.title }}</div>
+              <div class="row">
+                <div class="row col-6">
+                  <q-icon name="schedule" size="xs" class="q-pr-sm" />
+                  <div class="text-subtitle2">{{ card.date }}</div>
+                </div>
+                <div class="row col-6">
+                  <q-icon name="person" size="xs" class="q-pr-sm" />
+                  <div class="text-subtitle2">{{ card.role }}</div>
+                </div>
+              </div>
+            </q-card-section>
+            <img
+              :src="card.image"
+              class="q-pa-md"
+              style="border-radius: 30px"
+            />
+            <q-card-section class="q-pt-none">
+              {{ card.description }}
+            </q-card-section>
+          </q-card>
+        </div>
+      </div>
     </div>
   </div>
   <div v-if="!reachedBottom" class="scrolldown" style="--color: #0563bb">
@@ -278,7 +354,7 @@ import canva from 'src/assets/Canva-icon.png';
 import git from 'src/assets/Git-Icon.png';
 
 const typedStrings =
-  'a Designer, an Editor, a Developer, a Freelancer, a Graduate'; // This could be dynamic as well
+  'a Designer, an Editor, a Web Developer, a Frontend Developer, a Graduate'; // This could be dynamic as well
 
 const reachedBottom = ref<boolean>(false);
 
@@ -382,21 +458,59 @@ const chips = [
   { color: '#e9e9e9', text: 'Canva', image: canva },
   { color: '#e9e9e9', text: 'Git', image: git },
 ];
+
+interface projectsCard {
+  title: string;
+  date: string;
+  role: string;
+  image: string;
+  description: string;
+}
+
+const cardsContent = ref<projectsCard[]>([
+  {
+    title: 'Our Changing Planet',
+    date: 'September 2024',
+    role: 'Designer',
+    image: 'https://cdn.quasar.dev/img/mountains.jpg',
+    description:
+      'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+  },
+  {
+    title: 'In this World',
+    date: 'November 2024',
+    role: 'Programmer',
+    image: 'https://cdn.quasar.dev/img/parallax2.jpg',
+    description:
+      "The paper was blank. It shouldn't have been. There should have been writing on the paper, at least a paragraph if not more.",
+  },
+  {
+    title: 'For Once and for All',
+    date: 'December 2024',
+    role: 'Engineer',
+    image: 'https://picsum.photos/500/300',
+    description:
+      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+  },
+]);
 </script>
 
 <style scoped>
 .container {
   overflow: hidden;
 }
+
+ul {
+  list-style-type: none;
+}
 .background-size {
-  height: 100vh; /* Full height */
   width: 100vw; /* Full width */
   position: relative;
 }
 
 .container-about-divider {
   position: absolute; /* Absolute positioning */
-  bottom: 30%; /* 20% from the bottom of the parent */
+  bottom: 35%; /* 20% from the bottom of the parent */
   left: 0; /* Align left */
   right: 0; /* Align right */
   background-image: linear-gradient(
@@ -654,7 +768,7 @@ const chips = [
   #about {
     min-height: 100vh;
     .container-about-desc {
-      justify-content: space-around;
+      justify-content: space-between;
       p:nth-child(1) {
         font-size: 30px;
       }
