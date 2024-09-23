@@ -182,8 +182,8 @@
           leave-active-class="animated fadeInRightBig slower"
         >
           <div
-            class="col-12 col-md-4 column container-about-image justify-center"
-            style="max-width: 100%; z-index: 2"
+            class="col-12 col-md-4 column container-about-image"
+            style="max-width: 100%; z-index: 2; text-align: center"
           >
             <q-img
               src="../assets/polaroid.png"
@@ -191,8 +191,7 @@
                 width: 400px;
                 max-width: 100%;
                 object-fit: contain;
-                object-position: center;
-                align-items: center;
+                margin: auto;
               "
             />
           </div>
@@ -207,10 +206,16 @@
             style="max-width: 100%; z-index: 2"
           >
             <div style="max-width: 100%">
-              <p class="text-primary text-weight-medium">
+              <p
+                class="text-primary text-weight-medium row"
+                :class="$q.screen.gt.sm ? '' : 'justify-center text-center'"
+              >
                 I am Joshua Christian Limerson,
               </p>
-              <p class="text-blue-grey text-subtitle1 q-pr-xl text-justify">
+              <p
+                class="text-blue-grey text-subtitle1 text-justify"
+                :class="$q.screen.gt.sm ? 'q-pr-xl' : 'q-px-md'"
+              >
                 I am a graduate Computer Science (Global Class) student on BINUS
                 UNIVERSITY. My passion on Computer Science subject itself lies
                 on UI/UX Designer, Front-End Development, and animations. I
@@ -219,59 +224,31 @@
                 every aspect.
               </p>
             </div>
-            <div style="height: 200px" v-if="$q.screen.gt.xs"></div>
-            <div class="row">
-              <div class="col-12 col-md-6">
-                <ul class="q-pl-none">
-                  <li class="q-pb-sm">
-                    <q-icon name="chevron_right" size="sm" color="primary" />
-                    <strong class="text-h6 q-pr-md">Birth Date:</strong>
-                    <span class="text-h6 text-weight-light"
-                      >Singapore, 25 April 2001</span
-                    >
-                  </li>
-                  <li class="q-pb-sm">
-                    <q-icon name="chevron_right" size="sm" color="primary" />
-                    <strong class="text-h6 q-pr-md">Phone:</strong>
-                    <span class="text-h6 text-weight-light"
-                      >+(62) 895 330 690 960</span
-                    >
-                  </li>
-                  <li class="q-pb-sm">
-                    <q-icon name="chevron_right" size="sm" color="primary" />
-                    <strong class="text-h6 q-pr-md">City:</strong>
-                    <span class="text-h6 text-weight-light"
-                      >Batam, Indonesia</span
-                    >
-                  </li>
-                </ul>
+            <div style="height: 200px" v-if="$q.screen.gt.sm"></div>
+            <div v-if="!$q.screen.gt.sm" class="q-py-md">
+              <div
+                class="col-12 q-pa-md"
+                style="background-image: linear-gradient(#1976d2, #42a5f0)"
+              >
+                <p class="text-white text-h5 text-weight-medium">Skills</p>
+                <ChipList :chips="chips" />
               </div>
-              <div class="col-12 col-md-6">
-                <ul class="q-pl-none">
-                  <li class="q-pb-sm">
-                    <q-icon name="chevron_right" size="sm" color="primary" />
-                    <strong class="text-h6 q-pr-md">Age:</strong>
-                    <span class="text-h6 text-weight-light">21</span>
-                  </li>
-                  <li class="q-pb-sm">
-                    <q-icon name="chevron_right" size="sm" color="primary" />
-                    <strong class="text-h6 q-pr-md">Email:</strong>
-                    <span class="text-h6 text-weight-light"
-                      >jcljoshualim@gmail.com</span
-                    >
-                  </li>
-                  <li class="q-pb-sm">
-                    <q-icon name="chevron_right" size="sm" color="primary" />
-                    <strong class="text-h6 q-pr-md">Freelance:</strong>
-                    <span class="text-h6 text-weight-light">Available</span>
-                  </li>
-                </ul>
+            </div>
+            <div class="row q-mb-md">
+              <div
+                v-for="(item, index) in infoList"
+                :key="index"
+                class="col-12 col-sm-6 q-pb-md"
+              >
+                <q-icon name="chevron_right" size="sm" color="primary" />
+                <strong class="text-h6 q-pr-md">{{ item.label }}:</strong>
+                <span class="text-h6 text-weight-light">{{ item.value }}</span>
               </div>
             </div>
           </div>
         </transition>
-        <div class="row container-about-divider">
-          <q-space class="col-12 col-md-4" v-if="$q.screen.gt.xs" />
+        <div class="row container-about-divider" v-if="$q.screen.gt.sm">
+          <q-space class="col-md-4" />
           <div class="col-12 col-md-8 q-px-md">
             <p class="text-white text-h5 text-weight-medium">Skills</p>
             <ChipList :chips="chips" />
@@ -493,6 +470,21 @@ const cardsContent = ref<projectsCard[]>([
       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
   },
 ]);
+// Define the interface
+interface InfoItem {
+  label: string;
+  value: string;
+}
+
+// Create a ref with the array of InfoItem objects
+const infoList = ref<InfoItem[]>([
+  { label: 'Birth Date', value: 'Singapore, 25 April 2001' },
+  { label: 'Phone', value: '+(62) 895 330 690 960' },
+  { label: 'City', value: 'Batam, Indonesia' },
+  { label: 'Age', value: '21' },
+  { label: 'Email', value: 'jcljoshualim@gmail.com' },
+  { label: 'Freelance', value: 'Available' },
+]);
 </script>
 
 <style scoped>
@@ -510,7 +502,7 @@ ul {
 
 .container-about-divider {
   position: absolute; /* Absolute positioning */
-  bottom: 35%; /* 20% from the bottom of the parent */
+  bottom: 30%; /* 20% from the bottom of the parent */
   left: 0; /* Align left */
   right: 0; /* Align right */
   background-image: linear-gradient(
@@ -677,7 +669,7 @@ ul {
   --sizeX: 30px;
   --sizeY: 50px;
   position: fixed; /* Change to fixed to stick to the viewport */
-  bottom: 30px; /* Adjust distance from the bottom */
+  bottom: 35px; /* Adjust distance from the bottom */
   right: 20px; /* Adjust distance from the right */
   width: var(--sizeX);
   height: var(--sizeY);
