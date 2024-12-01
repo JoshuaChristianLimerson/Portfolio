@@ -4,7 +4,7 @@
       view="hHh Lpr lff"
       container
       class="fixed-top"
-      :style="{ height: drawer ? '100vh' : '90px', zIndex: 2 }"
+      :style="{ height: drawer ? '100vh' : '90px', zIndex: 3 }"
     >
       <q-header class="text-white my-header">
         <q-toolbar class="row justify-between">
@@ -124,7 +124,11 @@
 
             <q-card-section class="row justify-center q-pa-none">
               <div class="socialList">
-                <a class="socialContainer containerOne" href="#">
+                <a
+                  class="socialContainer containerOne"
+                  href="https://www.instagram.com/cl_joshua/"
+                  target="_blank"
+                >
                   <svg viewBox="0 0 16 16" class="socialSvg instagramSvg">
                     <path
                       d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
@@ -132,7 +136,11 @@
                   </svg>
                 </a>
 
-                <a class="socialContainer containerTwo" href="#">
+                <a
+                  class="socialContainer containerTwo"
+                  href="https://github.com/JoshuaChristianLimerson"
+                  target="_blank"
+                >
                   <svg viewBox="0 0 16 16" class="socialSvg twitterSvg">
                     <path
                       d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
@@ -140,7 +148,11 @@
                   </svg>
                 </a>
 
-                <a class="socialContainer containerThree" href="#">
+                <a
+                  class="socialContainer containerThree"
+                  href="https://www.linkedin.com/in/joshua-christian-limerson-815072224/"
+                  target="_blank"
+                >
                   <svg viewBox="0 0 448 512" class="socialSvg linkdinSvg">
                     <path
                       d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"
@@ -148,7 +160,11 @@
                   </svg>
                 </a>
 
-                <a class="socialContainer containerFour" href="#">
+                <a
+                  class="socialContainer containerFour"
+                  href="mailto:jcljoshualim@gmail.com?subject=Email%20to%20Joshua%20Christian%20Limerson&body=Hello%20there!%20Joshua%20Christian%20Limerson,"
+                  target="_blank"
+                >
                   <svg viewBox="0 0 16 16" class="socialSvg emailSvg">
                     <path
                       d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2zm3.708 6.208L1 11.105V5.383zM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2z"
@@ -175,7 +191,7 @@
       </div>
     </div>
     <div style="background-color: #ffffff" id="about">
-      <div class="background-size row">
+      <div class="row background-size">
         <transition
           appear
           enter-active-class="animated fadeInLeftBig slower"
@@ -255,41 +271,178 @@
           </div>
         </div>
       </div>
-      <div class="bg-red" style="height: 100vh"></div>
+      <section id="resume" class="resume background-size">
+        <div class="container" data-aos="fade-up">
+          <div class="col-12 column text-center q-pb-md">
+            <div class="skills-section">
+              <div class="skills-container">
+                <div class="skills-title">Resume</div>
+                <div class="underline">
+                  <div class="progress"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row q-px-xl">
+            <div class="col-lg-6 q-pr-md">
+              <div class="text-h4 text-primary text-weight-medium">
+                Work Experience
+              </div>
+              <q-timeline color="primary">
+                <q-timeline-entry
+                  title="PT Charoen Pokphand Indonesia Tbk"
+                  subtitle="August 2022 - Present"
+                >
+                  <div class="text-subtitle1">
+                    <q-icon name="chevron_right" size="sm" color="primary" />
+                    Designing the UI/UX of the current website used by customers
+                    using figma therefore new features can be implemented.
+                    <br /><q-icon
+                      name="chevron_right"
+                      size="sm"
+                      color="primary"
+                    />Conduct research, analysis, design, prototype and testing
+                    of the website. Implement html, css, and javascript, vuejs,
+                    and PHP(Laravel) using Vuetify library based on material
+                    design. Conduct usability testing and evaluation in order to
+                    develop a better website.
+                  </div>
+                </q-timeline-entry>
+              </q-timeline>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="text-h4 text-primary text-weight-medium">
+                Education
+              </div>
+              <q-timeline color="primary">
+                <q-timeline-entry
+                  title="Xi'an Jiaotong-Liverpool University"
+                  subtitle="February 2022 - June 2022"
+                >
+                  <div class="text-subtitle1">
+                    <q-icon style="margin-right: 5px">
+                      <q-img :src="educationIcon" /> </q-icon
+                    >Certified Study Abroad, Computer Science <br /><q-icon
+                      style="margin-right: 5px"
+                    >
+                      <q-img :src="locationIcon" /> </q-icon
+                    >Suzhou, China
+                  </div>
+                </q-timeline-entry>
+
+                <q-timeline-entry
+                  title="Binus University"
+                  subtitle="September 2019 - July 2023"
+                >
+                  <div class="text-subtitle1">
+                    <q-icon style="margin-right: 5px">
+                      <q-img :src="educationIcon" /> </q-icon
+                    >Bachelor's Degree, Computer Science
+                    <br />
+                    <q-icon style="margin-right: 5px">
+                      <q-img :src="locationIcon" /> </q-icon
+                    >Jakarta, Indonesia <br /><q-icon style="margin-right: 5px">
+                      <q-img :src="gpaIcon" />
+                    </q-icon>
+                    GPA: 3.61
+                  </div>
+                </q-timeline-entry>
+                <q-timeline-entry
+                  title="SMA Mondial Batam"
+                  subtitle="2016 - 2019"
+                >
+                  <div class="text-subtitle1">
+                    <q-icon style="margin-right: 5px">
+                      <q-img :src="educationIcon" /> </q-icon
+                    >Senior High School, Science Degree <br /><q-icon
+                      style="margin-right: 5px"
+                    >
+                      <q-img :src="locationIcon" /> </q-icon
+                    >Batam, Indonesia
+                  </div>
+                </q-timeline-entry>
+                <q-timeline-entry
+                  title="SMP Mondial Batam"
+                  subtitle="2013 - 2016"
+                >
+                  <div class="text-subtitle1">
+                    <q-icon style="margin-right: 5px">
+                      <q-img :src="educationIcon" /> </q-icon
+                    >Junior High School <br /><q-icon style="margin-right: 5px">
+                      <q-img :src="locationIcon" /> </q-icon
+                    >Batam, Indonesia
+                  </div>
+                </q-timeline-entry>
+                <q-timeline-entry
+                  title="SD Mondial Batam"
+                  subtitle="2007 - 2013"
+                >
+                  <div class="text-subtitle1">
+                    <q-icon style="margin-right: 5px">
+                      <q-img :src="educationIcon" /> </q-icon
+                    >Primary School <br />
+                    <q-icon style="margin-right: 5px">
+                      <q-img :src="locationIcon" /> </q-icon
+                    >Batam, Indonesia
+                  </div>
+                </q-timeline-entry>
+              </q-timeline>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- End Resume Section -->
     </div>
-    <div
-      style="background-color: #b2beb5"
-      id="projects"
-      class="background-size"
-    >
-      projects page
+    <div id="projects" class="background-size">
+      <div class="col-12 column text-center q-pb-md">
+        <div class="skills-section">
+          <div class="skills-container">
+            <div class="skills-title">Projects</div>
+            <div class="underline">
+              <div class="progress"></div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row justify-center q-px-lg">
         <div
           v-for="(card, index) in cardsContent"
           :key="index"
           class="col-12 col-md-4 q-pa-md"
         >
-          <q-card style="border-radius: 12px">
-            <q-card-section class="q-pb-none">
-              <div class="text-h6 q-pb-sm">{{ card.title }}</div>
-              <div class="row">
-                <div class="row col-6">
-                  <q-icon name="schedule" size="xs" class="q-pr-sm" />
-                  <div class="text-subtitle2">{{ card.date }}</div>
-                </div>
-                <div class="row col-6">
-                  <q-icon name="person" size="xs" class="q-pr-sm" />
-                  <div class="text-subtitle2">{{ card.role }}</div>
-                </div>
-              </div>
-            </q-card-section>
+          <q-card style="border-radius: 12px" class="shadow-3">
             <img
               :src="card.image"
               class="q-pa-md"
               style="border-radius: 30px"
             />
-            <q-card-section class="q-pt-none">
-              {{ card.description }}
+            <q-card-section class="q-pa-none">
+              <q-item>
+                <q-item-section avatar top>
+                  <q-avatar class="bg-primary"
+                    ><q-icon size="sm"> <q-img :src="card.avatar" /> </q-icon
+                  ></q-avatar>
+                </q-item-section>
+
+                <q-item-section>
+                  <q-item-label class="text-weight-medium text-subtitle1">{{
+                    card.title
+                  }}</q-item-label>
+                  <q-item-label class="text-primary text-subtitle2">{{
+                    card.role
+                  }}</q-item-label>
+                  <q-item-label lines="1" class="text-subtitle2 text-grey">{{
+                    card.date
+                  }}</q-item-label>
+                </q-item-section>
+
+                <q-item-section side>
+                  <q-icon size="xl"> <q-img :src="card.trailing" /> </q-icon>
+                </q-item-section>
+              </q-item>
             </q-card-section>
           </q-card>
         </div>
@@ -316,6 +469,7 @@
 import { onMounted, onUnmounted, ref } from 'vue';
 import ChipList from 'src/components/chipList.vue';
 import Typed from 'typed.js';
+import { QIcon } from 'quasar';
 
 import figma from 'src/assets/Figma-logo.png';
 import html from 'src/assets/HTML5-Badge.png';
@@ -329,6 +483,11 @@ import aftereffect from 'src/assets/AdobeAE-icon.png';
 import msoffice from 'src/assets/MSOffice-logo.png';
 import canva from 'src/assets/Canva-icon.png';
 import git from 'src/assets/Git-Icon.png';
+import locationIcon from 'src/assets/location.png';
+import educationIcon from 'src/assets/mortarboard.png';
+import gpaIcon from 'src/assets/gpa.png';
+import mobile from 'src/assets/mobile-apps.gif';
+import web from 'src/assets/web-developer.gif';
 
 const typedStrings =
   'a Designer, an Editor, a Web Developer, a Frontend Developer, a Graduate'; // This could be dynamic as well
@@ -442,32 +601,70 @@ interface projectsCard {
   role: string;
   image: string;
   description: string;
+  avatar: string;
+  trailing: string;
 }
 
 const cardsContent = ref<projectsCard[]>([
   {
-    title: 'Our Changing Planet',
-    date: 'September 2024',
-    role: 'Designer',
+    title: 'Inventory Management (IM) mobile',
+    date: '2022',
+    role: 'UI & UX Designer',
     image: 'https://cdn.quasar.dev/img/mountains.jpg',
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    avatar: figma,
+    trailing: mobile,
   },
   {
-    title: 'In this World',
+    title: 'MyPigFarm',
     date: 'November 2024',
-    role: 'Programmer',
+    role: 'UI & UX Designer',
     image: 'https://cdn.quasar.dev/img/parallax2.jpg',
     description:
       "The paper was blank. It shouldn't have been. There should have been writing on the paper, at least a paragraph if not more.",
+    avatar: figma,
+    trailing: mobile,
   },
   {
-    title: 'For Once and for All',
+    title: 'Charoen Pokphand Indonesia Commerce (CPIC)',
     date: 'December 2024',
-    role: 'Engineer',
+    role: 'UI & UX Designer',
     image: 'https://picsum.photos/500/300',
     description:
       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+    avatar: figma,
+    trailing: mobile,
+  },
+  {
+    title: 'E-Comdiv',
+    date: 'December 2024',
+    role: 'UX Engineer',
+    image: 'https://picsum.photos/500/300',
+    description:
+      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+    avatar: figma,
+    trailing: web,
+  },
+  {
+    title: 'Poultry Integration Web',
+    date: 'December 2024',
+    role: 'UX Engineer',
+    image: 'https://picsum.photos/500/300',
+    description:
+      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+    avatar: figma,
+    trailing: web,
+  },
+  {
+    title: 'Finance.ai',
+    date: 'December 2024',
+    role: 'UX Engineer',
+    image: 'https://picsum.photos/500/300',
+    description:
+      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+    avatar: figma,
+    trailing: web,
   },
 ]);
 // Define the interface
@@ -480,14 +677,27 @@ interface InfoItem {
 const infoList = ref<InfoItem[]>([
   { label: 'Birth Date', value: 'Singapore, 25 April 2001' },
   { label: 'Phone', value: '+(62) 895 330 690 960' },
-  { label: 'City', value: 'Batam, Indonesia' },
-  { label: 'Age', value: '21' },
+  { label: 'City', value: 'Batam / Jakarta' },
+  { label: 'Age', value: '23' },
   { label: 'Email', value: 'jcljoshualim@gmail.com' },
-  { label: 'Freelance', value: 'Available' },
+  { label: 'Languages', value: 'English, Bahasa Indonesia' },
 ]);
 </script>
 
 <style scoped>
+.image-container {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100%; /* Ensure it takes the full height of the row */
+}
+
+.image-container-2 {
+  display: flex;
+  align-items: center; /* Center vertically */
+  height: 100%; /* Ensure it takes the full height of the row */
+}
+
 .container {
   overflow: hidden;
 }
@@ -802,6 +1012,34 @@ ul {
         font-size: 20px;
       }
     }
+  }
+}
+
+.skills-section {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.skills-title {
+  color: #0563bb;
+  font-size: 28px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+.underline {
+  position: relative;
+  width: 150px;
+  height: 3px;
+  margin: 10px auto;
+  background-color: #9e9e9e;
+
+  .progress {
+    width: 50%;
+    height: 3px;
+    background-color: #343399;
+    position: absolute;
+    left: 25%;
   }
 }
 </style>
