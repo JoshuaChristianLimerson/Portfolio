@@ -15,7 +15,10 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
+    "@tsparticles/slim": "^3.7.1",
+    "@tsparticles/vue3": "^3.0.1",
     "quasar": "^2.16.0",
+    "tsparticles": "^3.7.1",
     "typed.js": "^2.1.0",
     "vue": "^3.4.18",
     "vue-router": "^4.0.12"

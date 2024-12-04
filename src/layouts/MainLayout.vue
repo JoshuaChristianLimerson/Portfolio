@@ -190,7 +190,83 @@
         </q-card>
       </div>
     </div>
-    <div style="background-color: #ffffff" id="about">
+    <div id="particles-background">
+      <vue-particles
+        id="tsparticles"
+        :options="{
+          background: {
+            color: {
+              value: '#ffffff',
+            },
+          },
+          fpsLimit: 120,
+          interactivity: {
+            events: {
+              onClick: {
+                enable: true,
+                mode: 'push',
+              },
+              onHover: {
+                enable: true,
+                mode: 'repulse',
+              },
+            },
+            modes: {
+              bubble: {
+                distance: 400,
+                duration: 5,
+                opacity: 0.8,
+                size: 40,
+              },
+              push: {
+                quantity: 4,
+              },
+              repulse: {
+                distance: 200,
+                duration: 5,
+              },
+            },
+          },
+          particles: {
+            color: {
+              value: '#0d47a1',
+            },
+            links: {
+              color: '#0d47a1',
+              distance: 150,
+              enable: true,
+              opacity: 0.5,
+              width: 1,
+            },
+            move: {
+              direction: 'none',
+              enable: true,
+              outModes: 'bounce',
+              random: false,
+              speed: 2,
+              straight: false,
+            },
+            number: {
+              density: {
+                enable: true,
+              },
+              value: 60,
+            },
+            opacity: {
+              value: 0.5,
+            },
+            shape: {
+              type: 'circle',
+            },
+            size: {
+              value: { min: 1, max: 5 },
+            },
+          },
+          detectRetina: true,
+        }"
+      />
+    </div>
+    <div id="about">
       <div class="row background-size">
         <transition
           appear
@@ -295,18 +371,21 @@
                   subtitle="August 2022 - Present"
                 >
                   <div class="text-subtitle1">
-                    <q-icon name="chevron_right" size="sm" color="primary" />
-                    Designing the UI/UX of the current website used by customers
-                    using figma therefore new features can be implemented.
-                    <br /><q-icon
-                      name="chevron_right"
-                      size="sm"
-                      color="primary"
-                    />Conduct research, analysis, design, prototype and testing
-                    of the website. Implement html, css, and javascript, vuejs,
-                    and PHP(Laravel) using Vuetify library based on material
-                    design. Conduct usability testing and evaluation in order to
-                    develop a better website.
+                    <ul class="jobDesc">
+                      <li class="q-pb-md">
+                        Designing the UI/UX of the current website used by
+                        customers using figma therefore new features can be
+                        implemented.
+                      </li>
+                      <li>
+                        Conduct research, analysis, design, prototype and
+                        testing of the website. Implement html, css, and
+                        javascript, vuejs, and PHP(Laravel) using Vuetify
+                        library based on material design. Conduct usability
+                        testing and evaluation in order to develop a better
+                        website.
+                      </li>
+                    </ul>
                   </div>
                 </q-timeline-entry>
               </q-timeline>
@@ -396,14 +475,12 @@
 
       <!-- End Resume Section -->
     </div>
-    <div id="projects" class="background-size">
-      <div class="col-12 column text-center q-pb-md">
-        <div class="skills-section">
-          <div class="skills-container">
-            <div class="skills-title">Projects</div>
-            <div class="underline">
-              <div class="progress"></div>
-            </div>
+    <div class="col-12 column text-center q-pb-md" id="projects">
+      <div class="skills-section q-pt-lg">
+        <div class="skills-container">
+          <div class="skills-title">My Projects</div>
+          <div class="underline">
+            <div class="progress"></div>
           </div>
         </div>
       </div>
@@ -413,7 +490,16 @@
           :key="index"
           class="col-12 col-md-4 q-pa-md"
         >
-          <q-card style="border-radius: 12px" class="shadow-3">
+          <q-card
+            style="border-radius: 12px"
+            class="shadow-3 projectCard"
+            :class="{
+              hovered: hoveredIndex === index,
+              notHovered: hoveredIndex !== null && hoveredIndex !== index,
+            }"
+            @mouseenter="hoveredIndex = index"
+            @mouseleave="hoveredIndex = null"
+          >
             <img
               :src="card.image"
               class="q-pa-md"
@@ -421,22 +507,24 @@
             />
             <q-card-section class="q-pa-none">
               <q-item>
-                <q-item-section avatar top>
-                  <q-avatar class="bg-primary"
-                    ><q-icon size="sm"> <q-img :src="card.avatar" /> </q-icon
-                  ></q-avatar>
+                <q-item-section avatar>
+                  <q-avatar class="bg-primary">
+                    <q-icon size="sm">
+                      <q-img :src="card.avatar" />
+                    </q-icon>
+                  </q-avatar>
                 </q-item-section>
 
                 <q-item-section>
-                  <q-item-label class="text-weight-medium text-subtitle1">{{
-                    card.title
-                  }}</q-item-label>
-                  <q-item-label class="text-primary text-subtitle2">{{
-                    card.role
-                  }}</q-item-label>
-                  <q-item-label lines="1" class="text-subtitle2 text-grey">{{
-                    card.date
-                  }}</q-item-label>
+                  <q-item-label class="text-weight-medium text-subtitle1">
+                    {{ card.title }}
+                  </q-item-label>
+                  <q-item-label class="text-primary text-subtitle2">
+                    {{ card.role }}
+                  </q-item-label>
+                  <q-item-label lines="1" class="text-subtitle2 text-grey">
+                    {{ card.date }}
+                  </q-item-label>
                 </q-item-section>
 
                 <q-item-section side>
@@ -448,21 +536,21 @@
         </div>
       </div>
     </div>
-  </div>
-  <div v-if="!reachedBottom" class="scrolldown" style="--color: #0563bb">
-    <div class="chevrons">
-      <div class="chevrondown"></div>
-      <div class="chevrondown"></div>
+    <div v-if="!reachedBottom" class="scrolldown" style="--color: #0563bb">
+      <div class="chevrons">
+        <div class="chevrondown"></div>
+        <div class="chevrondown"></div>
+      </div>
     </div>
+    <q-btn
+      round
+      v-if="reachedBottom"
+      @click="scrollToTop"
+      icon="navigation"
+      color="primary"
+      class="fixed-bottom-right q-mb-md q-mr-md bounceBtn"
+    />
   </div>
-  <q-btn
-    round
-    v-if="reachedBottom"
-    @click="scrollToTop"
-    icon="navigation"
-    color="primary"
-    class="fixed-bottom-right q-mb-md q-mr-md bounceBtn"
-  />
 </template>
 
 <script setup lang="ts">
@@ -595,6 +683,8 @@ const chips = [
   { color: '#e9e9e9', text: 'Git', image: git },
 ];
 
+const hoveredIndex = ref<number | null>(null);
+
 interface projectsCard {
   title: string;
   date: string;
@@ -699,7 +789,17 @@ const infoList = ref<InfoItem[]>([
 }
 
 .container {
+  position: relative;
   overflow: hidden;
+}
+
+#particles-background {
+  position: absolute; /* Position particles behind the content */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Put particles behind everything */
 }
 
 ul {
@@ -722,11 +822,13 @@ ul {
   padding: 10px; /* Add some padding */
 }
 .gradient-background {
+  position: relative;
   height: 100vh; /* Full height */
   width: 100vw; /* Full width */
   background: linear-gradient(45deg, #d42274, #3a7bd5, #d4d122);
   background-size: 600% 600%;
   animation: GradientBackground 30s ease infinite;
+  z-index: 1;
 }
 
 @keyframes GradientBackground {
@@ -871,6 +973,14 @@ ul {
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
   }
+}
+
+.jobDesc {
+  list-style-type: disc;
+}
+
+ul li::marker {
+  color: #0563bb; /* Set the bullet color to blue */
 }
 
 /* From Uiverse.io by mrhyddenn */
@@ -1041,5 +1151,24 @@ ul {
     position: absolute;
     left: 25%;
   }
+}
+
+.projectCard {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
+}
+
+.projectCard.hovered {
+  opacity: 1 !important;
+  transform: scale(1.05);
+}
+
+.projectCard.notHovered {
+  opacity: 0.5 !important;
+}
+
+.projectCard:not(.hovered):not(.notHovered) {
+  opacity: 1 !important;
+  transform: scale(1);
 }
 </style>
