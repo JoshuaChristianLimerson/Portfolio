@@ -18,11 +18,11 @@
           >
             <q-tab name="home" label="Home" @click="moveTo('home')" />
             <q-tab name="about" label="About Me" @click="moveTo('about')" />
-            <q-tab
+            <!-- <q-tab
               name="projects"
               label="Projects"
               @click="moveTo('projects')"
-            />
+            /> -->
           </q-tabs>
           <q-btn
             flat
@@ -250,7 +250,7 @@
               density: {
                 enable: true,
               },
-              value: 60,
+              value: 40,
             },
             opacity: {
               value: 0.5,
@@ -259,7 +259,7 @@
               type: 'circle',
             },
             size: {
-              value: { min: 1, max: 5 },
+              value: { min: 1, max: 4 },
             },
           },
           detectRetina: true,
@@ -349,15 +349,25 @@
       </div>
       <section id="resume" class="resume background-size">
         <div class="container" data-aos="fade-up">
-          <div class="col-12 column text-center q-pb-md">
-            <div class="skills-section">
-              <div class="skills-container">
-                <div class="skills-title">Resume</div>
-                <div class="underline">
-                  <div class="progress"></div>
-                </div>
+          <div class="row text-center items-center justify-center q-my-xl">
+            <q-separator
+              class="col-4"
+              color="primary"
+              size="2px"
+              v-if="$q.screen.gt.xs"
+            />
+            <div :class="$q.screen.gt.xs ? 'col-2' : 'col-5'">
+              <div class="skills-title">Resume</div>
+              <div class="underline">
+                <div class="progress"></div>
               </div>
             </div>
+            <q-separator
+              class="col-4"
+              color="primary"
+              size="2px"
+              v-if="$q.screen.gt.xs"
+            />
           </div>
 
           <div class="row q-px-xl">
@@ -365,29 +375,79 @@
               <div class="text-h4 text-primary text-weight-medium">
                 Work Experience
               </div>
+
               <q-timeline color="primary">
                 <q-timeline-entry
                   title="PT Charoen Pokphand Indonesia Tbk"
-                  subtitle="August 2022 - Present"
+                  subtitle="August 2022 - Present (2 years 5 months)"
                 >
-                  <div class="text-subtitle1">
-                    <ul class="jobDesc">
-                      <li class="q-pb-md">
-                        Designing the UI/UX of the current website used by
-                        customers using figma therefore new features can be
-                        implemented.
-                      </li>
-                      <li>
-                        Conduct research, analysis, design, prototype and
-                        testing of the website. Implement html, css, and
-                        javascript, vuejs, and PHP(Laravel) using Vuetify
-                        library based on material design. Conduct usability
-                        testing and evaluation in order to develop a better
-                        website.
-                      </li>
-                    </ul>
-                  </div>
+                  <q-timeline color="primary">
+                    <q-timeline-entry
+                      title="Ux Engineer"
+                      subtitle="March 2023 - Present (1 Year 10 Months)"
+                    >
+                      <div class="text-subtitle1">
+                        <ul class="jobDesc">
+                          <li class="q-pb-md">
+                            Designing the UI/UX of the current website used by
+                            customers using figma therefore new features can be
+                            implemented.
+                          </li>
+                          <li>
+                            Conduct research, analysis, design, prototype and
+                            testing of the website.
+                          </li>
+                          <li>
+                            Implement html, css, and javascript, vuejs, and
+                            PHP(Laravel) using Vuetify library for developing
+                            the company web application.
+                          </li>
+                          <li>
+                            Conduct usability testing and evaluation in order to
+                            develop a better website.
+                          </li>
+                        </ul>
+                      </div>
+                    </q-timeline-entry>
+                    <q-timeline-entry
+                      title="Web Developer Intern"
+                      subtitle="August 2022 - February 2023 (7 Months)"
+                    >
+                      <div
+                        :class="
+                          $q.screen.gt.xs ? 'text-subtitle1' : 'text-subtitle2'
+                        "
+                      >
+                        <ul class="jobDesc">
+                          <li class="q-pb-md">
+                            Designed and prototyped user interfaces and
+                            experiences (UI/UX) using Figma to enhance customer
+                            engagement and support the implementation of new
+                            features.
+                          </li>
+                          <li class="q-pb-md">
+                            Developed and maintained web applications by coding
+                            in HTML, CSS, JavaScript, Vue.js, and PHP (Laravel),
+                            utilizing Vuetify library for responsive and
+                            user-friendly designs.
+                          </li>
+                          <li class="q-pb-md">
+                            Conducted user research, usability testing, and
+                            analysis to continuously improve website
+                            functionality and user satisfaction.
+                          </li>
+                          <li>
+                            Created instructional content, including user
+                            manuals and video tutorials, to support users in
+                            navigating and utilizing company applications
+                            effectively.
+                          </li>
+                        </ul>
+                      </div>
+                    </q-timeline-entry>
+                  </q-timeline>
                 </q-timeline-entry>
+                <q-timeline-entry></q-timeline-entry>
               </q-timeline>
             </div>
 
@@ -475,14 +535,26 @@
 
       <!-- End Resume Section -->
     </div>
-    <div class="col-12 column text-center q-pb-md" id="projects">
-      <div class="skills-section q-pt-lg">
-        <div class="skills-container">
+    <!-- <div class="col-12 column text-center q-pb-md" id="projects">
+      <div class="row text-center items-center justify-center q-my-xl">
+        <q-separator
+          class="col-4"
+          color="primary"
+          size="2px"
+          v-if="$q.screen.gt.xs"
+        />
+        <div :class="$q.screen.gt.xs ? 'col-2' : 'col-5'">
           <div class="skills-title">My Projects</div>
           <div class="underline">
             <div class="progress"></div>
           </div>
         </div>
+        <q-separator
+          class="col-4"
+          color="primary"
+          size="2px"
+          v-if="$q.screen.gt.xs"
+        />
       </div>
       <div class="row justify-center q-px-lg">
         <div
@@ -492,13 +564,14 @@
         >
           <q-card
             style="border-radius: 12px"
-            class="shadow-3 projectCard"
+            class="shadow-3 projectCard cursor-pointer"
             :class="{
               hovered: hoveredIndex === index,
               notHovered: hoveredIndex !== null && hoveredIndex !== index,
             }"
             @mouseenter="hoveredIndex = index"
             @mouseleave="hoveredIndex = null"
+            @click="fullHeight = true"
           >
             <img
               :src="card.image"
@@ -535,8 +608,12 @@
           </q-card>
         </div>
       </div>
-    </div>
-    <div v-if="!reachedBottom" class="scrolldown" style="--color: #0563bb">
+    </div> -->
+    <div
+      v-if="!reachedBottom"
+      class="scrolldown"
+      style="--color: #0563bb; z-index: 1"
+    >
       <div class="chevrons">
         <div class="chevrondown"></div>
         <div class="chevrondown"></div>
@@ -551,10 +628,136 @@
       class="fixed-bottom-right q-mb-md q-mr-md bounceBtn"
     />
   </div>
+  <q-dialog
+    v-model="fullHeight"
+    :full-height="$q.screen.xs ? false : true"
+    persistent
+  >
+    <q-card>
+      <q-card-section class="q-pa-md" horizontal>
+        <q-item-section avatar>
+          <q-avatar rounded color="green-10" text-color="white"> R </q-avatar>
+        </q-item-section>
+
+        <q-item-section class="col-2">
+          <q-item-label class="text-weight-bold text-h6"
+            >Title Sequence</q-item-label
+          >
+          <q-item-label caption lines="1" class="text-weight-medium"
+            >email of person</q-item-label
+          >
+        </q-item-section>
+        <div class="row" style="width: 1000px" v-if="$q.screen.gt.xs">
+          <q-separator vertical class="q-mr-sm" size="2px" />
+          <q-item-section class="col-1">
+            <q-item-label class="text-weight-bold">Title Sequence</q-item-label>
+          </q-item-section>
+          <q-separator vertical class="q-mr-sm" size="2px" />
+          <q-item-section class="col-1">
+            <q-item-label class="text-weight-bold">Title Sequence</q-item-label>
+          </q-item-section>
+          <q-separator vertical class="q-mr-sm" size="2px" />
+          <q-item-section class="col-1">
+            <q-item-label class="text-weight-bold">Title Sequence</q-item-label>
+          </q-item-section>
+          <q-separator vertical size="2px" />
+        </div>
+
+        <q-space></q-space>
+        <q-item-section side>
+          <q-btn
+            round
+            color="green-10"
+            icon="close"
+            size="sm"
+            @click="fullHeight = false"
+          />
+        </q-item-section>
+      </q-card-section>
+      <q-separator size="2px" />
+      <q-card-section
+        style="height: 80vh"
+        class="scroll bg-blue-grey-1 row q-px-md"
+        ><q-card-section
+          class="column q-py-none"
+          :class="
+            $q.screen.xs
+              ? 'col-12'
+              : $q.screen.sm
+              ? 'col-6 q-pr-none'
+              : 'col-4 q-pr-none'
+          "
+        >
+          <q-card flat class="dialogCard col">
+            <q-card-section>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </q-card-section>
+          </q-card> </q-card-section
+        ><q-scroll-area
+          :class="$q.screen.xs ? 'col-12' : $q.screen.sm ? 'col-6' : 'col-8'"
+          v-if="$q.screen.gt.xs"
+          visible
+          :thumb-style="thumbStyle"
+        >
+          <div class="q-py-xs q-pr-md q-pl-md">
+            <q-card flat class="dialogCard q-mb-md">
+              <q-item>
+                <q-item-section avatar>
+                  <q-avatar>
+                    <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+                  </q-avatar>
+                </q-item-section>
+
+                <q-item-section>
+                  <q-item-label>Title</q-item-label>
+                  <q-item-label caption> Subhead </q-item-label>
+                </q-item-section>
+              </q-item>
+            </q-card>
+            <q-card flat class="dialogCard" style="height: 1000px">
+              <q-card-section>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </q-card-section>
+            </q-card>
+          </div> </q-scroll-area
+        ><q-card-section class="q-pt-none col-12" v-if="$q.screen.xs">
+          <q-card class="dialogCard q-mb-sm">
+            <q-item>
+              <q-item-section avatar>
+                <q-avatar>
+                  <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
+                </q-avatar>
+              </q-item-section>
+
+              <q-item-section>
+                <q-item-label>Title</q-item-label>
+                <q-item-label caption> Subhead </q-item-label>
+              </q-item-section>
+            </q-item>
+          </q-card>
+          <q-card class="dialogCard" style="height: 1000px">
+            <q-card-section>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </q-card-section>
+          </q-card>
+        </q-card-section></q-card-section
+      >
+    </q-card>
+      </q-dialog
+  >
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref } from 'vue';
+import { onMounted, onUnmounted, reactive, ref } from 'vue';
 import ChipList from 'src/components/chipList.vue';
 import Typed from 'typed.js';
 import { QIcon } from 'quasar';
@@ -567,20 +770,28 @@ import typescript from 'src/assets/Typescript-logo.png';
 import vue3 from 'src/assets/Vue-logo.png';
 import photoshop from 'src/assets/Photoshop.png';
 import premierpro from 'src/assets/AdobePP-icon.png';
-import aftereffect from 'src/assets/AdobeAE-icon.png';
+import quasar from 'src/assets/quasar.png';
 import msoffice from 'src/assets/MSOffice-logo.png';
 import canva from 'src/assets/Canva-icon.png';
 import git from 'src/assets/Git-Icon.png';
 import locationIcon from 'src/assets/location.png';
 import educationIcon from 'src/assets/mortarboard.png';
 import gpaIcon from 'src/assets/gpa.png';
-import mobile from 'src/assets/mobile-apps.gif';
-import web from 'src/assets/web-developer.gif';
+// import mobile from 'src/assets/mobile-apps.gif';
+// import web from 'src/assets/web-developer.gif';
 
 const typedStrings =
   'a Designer, an Editor, a Web Developer, a Frontend Developer, a Graduate'; // This could be dynamic as well
 
 const reachedBottom = ref<boolean>(false);
+const fullHeight = ref(false);
+
+const thumbStyle = reactive({
+  borderRadius: '5px',
+  backgroundColor: '#1b5e20',
+  width: '7px',
+  opacity: 0.75,
+});
 
 const handleScroll = () => {
   const documentHeight = document.documentElement.scrollHeight;
@@ -675,88 +886,89 @@ const chips = [
   { color: '#e9e9e9', text: 'Javascript', image: javascript },
   { color: '#e9e9e9', text: 'Typescript', image: typescript },
   { color: '#e9e9e9', text: 'Vue3', image: vue3 },
+  { color: '#e9e9e9', text: 'Quasar', image: quasar },
   { color: '#e9e9e9', text: 'Photoshop', image: photoshop },
   { color: '#e9e9e9', text: 'Premier pro', image: premierpro },
-  { color: '#e9e9e9', text: 'After Effect', image: aftereffect },
+
   { color: '#e9e9e9', text: 'Microsoft Office', image: msoffice },
   { color: '#e9e9e9', text: 'Canva', image: canva },
   { color: '#e9e9e9', text: 'Git', image: git },
 ];
 
-const hoveredIndex = ref<number | null>(null);
+//const hoveredIndex = ref<number | null>(null);
 
-interface projectsCard {
-  title: string;
-  date: string;
-  role: string;
-  image: string;
-  description: string;
-  avatar: string;
-  trailing: string;
-}
+// interface projectsCard {
+//   title: string;
+//   date: string;
+//   role: string;
+//   image: string;
+//   description: string;
+//   avatar: string;
+//   trailing: string;
+// }
 
-const cardsContent = ref<projectsCard[]>([
-  {
-    title: 'Inventory Management (IM) mobile',
-    date: '2022',
-    role: 'UI & UX Designer',
-    image: 'https://cdn.quasar.dev/img/mountains.jpg',
-    description:
-      'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-    avatar: figma,
-    trailing: mobile,
-  },
-  {
-    title: 'MyPigFarm',
-    date: 'November 2024',
-    role: 'UI & UX Designer',
-    image: 'https://cdn.quasar.dev/img/parallax2.jpg',
-    description:
-      "The paper was blank. It shouldn't have been. There should have been writing on the paper, at least a paragraph if not more.",
-    avatar: figma,
-    trailing: mobile,
-  },
-  {
-    title: 'Charoen Pokphand Indonesia Commerce (CPIC)',
-    date: 'December 2024',
-    role: 'UI & UX Designer',
-    image: 'https://picsum.photos/500/300',
-    description:
-      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
-    avatar: figma,
-    trailing: mobile,
-  },
-  {
-    title: 'E-Comdiv',
-    date: 'December 2024',
-    role: 'UX Engineer',
-    image: 'https://picsum.photos/500/300',
-    description:
-      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
-    avatar: figma,
-    trailing: web,
-  },
-  {
-    title: 'Poultry Integration Web',
-    date: 'December 2024',
-    role: 'UX Engineer',
-    image: 'https://picsum.photos/500/300',
-    description:
-      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
-    avatar: figma,
-    trailing: web,
-  },
-  {
-    title: 'Finance.ai',
-    date: 'December 2024',
-    role: 'UX Engineer',
-    image: 'https://picsum.photos/500/300',
-    description:
-      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
-    avatar: figma,
-    trailing: web,
-  },
-]);
+// const cardsContent = ref<projectsCard[]>([
+//   {
+//     title: 'Inventory Management (IM) mobile',
+//     date: '2022',
+//     role: 'UI & UX Designer',
+//     image: 'https://cdn.quasar.dev/img/mountains.jpg',
+//     description:
+//       'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+//     avatar: figma,
+//     trailing: mobile,
+//   },
+//   {
+//     title: 'MyPigFarm',
+//     date: 'November 2024',
+//     role: 'UI & UX Designer',
+//     image: 'https://cdn.quasar.dev/img/parallax2.jpg',
+//     description:
+//       "The paper was blank. It shouldn't have been. There should have been writing on the paper, at least a paragraph if not more.",
+//     avatar: figma,
+//     trailing: mobile,
+//   },
+//   {
+//     title: 'Charoen Pokphand Indonesia Commerce (CPIC)',
+//     date: 'December 2024',
+//     role: 'UI & UX Designer',
+//     image: 'https://picsum.photos/500/300',
+//     description:
+//       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+//     avatar: figma,
+//     trailing: mobile,
+//   },
+//   {
+//     title: 'E-Comdiv',
+//     date: 'December 2024',
+//     role: 'UX Engineer',
+//     image: 'https://picsum.photos/500/300',
+//     description:
+//       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+//     avatar: figma,
+//     trailing: web,
+//   },
+//   {
+//     title: 'Poultry Integration Web',
+//     date: 'December 2024',
+//     role: 'UX Engineer',
+//     image: 'https://picsum.photos/500/300',
+//     description:
+//       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+//     avatar: figma,
+//     trailing: web,
+//   },
+//   {
+//     title: 'Finance.ai',
+//     date: 'December 2024',
+//     role: 'UX Engineer',
+//     image: 'https://picsum.photos/500/300',
+//     description:
+//       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+//     avatar: figma,
+//     trailing: web,
+//   },
+// ]);
 // Define the interface
 interface InfoItem {
   label: string;
@@ -768,7 +980,7 @@ const infoList = ref<InfoItem[]>([
   { label: 'Birth Date', value: 'Singapore, 25 April 2001' },
   { label: 'Phone', value: '+(62) 895 330 690 960' },
   { label: 'City', value: 'Batam / Jakarta' },
-  { label: 'Age', value: '23' },
+  { label: 'Age', value: '23 Years Old' },
   { label: 'Email', value: 'jcljoshualim@gmail.com' },
   { label: 'Languages', value: 'English, Bahasa Indonesia' },
 ]);
