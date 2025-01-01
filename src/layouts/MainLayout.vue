@@ -18,11 +18,11 @@
           >
             <q-tab name="home" label="Home" @click="moveTo('home')" />
             <q-tab name="about" label="About Me" @click="moveTo('about')" />
-            <!-- <q-tab
+            <q-tab
               name="projects"
               label="Projects"
               @click="moveTo('projects')"
-            /> -->
+            />
           </q-tabs>
           <q-btn
             flat
@@ -203,7 +203,7 @@
           interactivity: {
             events: {
               onClick: {
-                enable: true,
+                enable: false,
                 mode: 'push',
               },
               onHover: {
@@ -250,7 +250,7 @@
               density: {
                 enable: true,
               },
-              value: 40,
+              value: 45,
             },
             opacity: {
               value: 0.5,
@@ -388,23 +388,32 @@
                     >
                       <div class="text-subtitle1">
                         <ul class="jobDesc">
-                          <li class="q-pb-md">
-                            Designing the UI/UX of the current website used by
-                            customers using figma therefore new features can be
-                            implemented.
+                          <li class="q-pb-sm">
+                            Designed and prototyped user interfaces and
+                            experiences (UI/UX) using Figma to enhance customer
+                            engagement and support the implementation of new
+                            applications.
+                          </li>
+                          <li class="q-pb-sm">
+                            Partner with developers to ensure designs are
+                            implemented as intended while maintaining
+                            functionality and performance.
+                          </li>
+                          <li class="q-pb-sm">
+                            Developed and maintained web applications front-end
+                            by coding in HTML, CSS, JavaScript, Typescript, and
+                            Vue.js. Utilizing Quasar library for components and
+                            user-friendly designs.
+                          </li>
+                          <li class="q-pb-sm">
+                            Develop interactive prototypes to demonstrate user
+                            flows and functionality.
                           </li>
                           <li>
-                            Conduct research, analysis, design, prototype and
-                            testing of the website.
-                          </li>
-                          <li>
-                            Implement html, css, and javascript, vuejs, and
-                            PHP(Laravel) using Vuetify library for developing
-                            the company web application.
-                          </li>
-                          <li>
-                            Conduct usability testing and evaluation in order to
-                            develop a better website.
+                            Created instructional content, including user
+                            manuals, presentations, and video tutorials, to
+                            support users in navigating and utilizing company
+                            applications effectively.
                           </li>
                         </ul>
                       </div>
@@ -419,19 +428,19 @@
                         "
                       >
                         <ul class="jobDesc">
-                          <li class="q-pb-md">
+                          <li class="q-pb-sm">
                             Designed and prototyped user interfaces and
                             experiences (UI/UX) using Figma to enhance customer
                             engagement and support the implementation of new
                             features.
                           </li>
-                          <li class="q-pb-md">
+                          <li class="q-pb-sm">
                             Developed and maintained web applications by coding
                             in HTML, CSS, JavaScript, Vue.js, and PHP (Laravel),
                             utilizing Vuetify library for responsive and
                             user-friendly designs.
                           </li>
-                          <li class="q-pb-md">
+                          <li class="q-pb-sm">
                             Conducted user research, usability testing, and
                             analysis to continuously improve website
                             functionality and user satisfaction.
@@ -535,8 +544,8 @@
 
       <!-- End Resume Section -->
     </div>
-    <!-- <div class="col-12 column text-center q-pb-md" id="projects">
-      <div class="row text-center items-center justify-center q-my-xl">
+    <div class="col-12 column text-center q-pb-md" id="projects">
+      <div class="row text-center items-center justify-center q-mt-xl">
         <q-separator
           class="col-4"
           color="primary"
@@ -608,7 +617,7 @@
           </q-card>
         </div>
       </div>
-    </div> -->
+    </div>
     <div
       v-if="!reachedBottom"
       class="scrolldown"
@@ -628,128 +637,423 @@
       class="fixed-bottom-right q-mb-md q-mr-md bounceBtn"
     />
   </div>
-  <q-dialog
-    v-model="fullHeight"
-    :full-height="$q.screen.xs ? false : true"
-    persistent
-  >
-    <q-card>
-      <q-card-section class="q-pa-md" horizontal>
-        <q-item-section avatar>
-          <q-avatar rounded color="green-10" text-color="white"> R </q-avatar>
-        </q-item-section>
+  <q-dialog v-model="fullHeight">
+    <q-card
+      class="projectDialog"
+      :style="{ backgroundColor: datas[0].background }"
+    >
+      <q-card-section class="bg-white row q-py-xs">
+        <div>
+          <q-item>
+            <q-item-section avatar>
+              <q-avatar>
+                <q-icon size="sm">
+                  <q-img :src="datas[0].avatar" />
+                </q-icon>
+              </q-avatar>
+            </q-item-section>
 
-        <q-item-section class="col-2">
-          <q-item-label class="text-weight-bold text-h6"
-            >Title Sequence</q-item-label
-          >
-          <q-item-label caption lines="1" class="text-weight-medium"
-            >email of person</q-item-label
-          >
-        </q-item-section>
-        <div class="row" style="width: 1000px" v-if="$q.screen.gt.xs">
-          <q-separator vertical class="q-mr-sm" size="2px" />
-          <q-item-section class="col-1">
-            <q-item-label class="text-weight-bold">Title Sequence</q-item-label>
-          </q-item-section>
-          <q-separator vertical class="q-mr-sm" size="2px" />
-          <q-item-section class="col-1">
-            <q-item-label class="text-weight-bold">Title Sequence</q-item-label>
-          </q-item-section>
-          <q-separator vertical class="q-mr-sm" size="2px" />
-          <q-item-section class="col-1">
-            <q-item-label class="text-weight-bold">Title Sequence</q-item-label>
-          </q-item-section>
-          <q-separator vertical size="2px" />
+            <q-item-section>
+              <q-item-label class="text-weight-medium text-h6">{{
+                datas[0].title
+              }}</q-item-label>
+              <q-item-label caption>{{ datas[0].company }}</q-item-label>
+            </q-item-section>
+          </q-item>
         </div>
-
-        <q-space></q-space>
-        <q-item-section side>
+        <q-space />
+        <div class="row items-center">
           <q-btn
             round
-            color="green-10"
             icon="close"
+            text-color="white"
+            v-close-popup
             size="sm"
-            @click="fullHeight = false"
+            class="q-py-none q-my-xs"
+            :style="{ backgroundColor: datas[0].color }"
           />
-        </q-item-section>
+        </div>
       </q-card-section>
-      <q-separator size="2px" />
-      <q-card-section
-        style="height: 80vh"
-        class="scroll bg-blue-grey-1 row q-px-md"
-        ><q-card-section
-          class="column q-py-none"
-          :class="
-            $q.screen.xs
-              ? 'col-12'
-              : $q.screen.sm
-              ? 'col-6 q-pr-none'
-              : 'col-4 q-pr-none'
-          "
-        >
-          <q-card flat class="dialogCard col">
-            <q-card-section>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </q-card-section>
-          </q-card> </q-card-section
-        ><q-scroll-area
-          :class="$q.screen.xs ? 'col-12' : $q.screen.sm ? 'col-6' : 'col-8'"
-          v-if="$q.screen.gt.xs"
-          visible
-          :thumb-style="thumbStyle"
-        >
-          <div class="q-py-xs q-pr-md q-pl-md">
-            <q-card flat class="dialogCard q-mb-md">
-              <q-item>
-                <q-item-section avatar>
-                  <q-avatar>
-                    <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-                  </q-avatar>
-                </q-item-section>
 
-                <q-item-section>
-                  <q-item-label>Title</q-item-label>
-                  <q-item-label caption> Subhead </q-item-label>
-                </q-item-section>
-              </q-item>
-            </q-card>
-            <q-card flat class="dialogCard" style="height: 1000px">
-              <q-card-section>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat.
-              </q-card-section>
-            </q-card>
-          </div> </q-scroll-area
-        ><q-card-section class="q-pt-none col-12" v-if="$q.screen.xs">
-          <q-card class="dialogCard q-mb-sm">
-            <q-item>
-              <q-item-section avatar>
-                <q-avatar>
-                  <img src="https://cdn.quasar.dev/img/boy-avatar.png" />
-                </q-avatar>
-              </q-item-section>
+      <q-separator />
+      <q-card-section class="q-pa-sm"
+        ><div class="row">
+          <div
+            style="border-radius: 20px"
+            :style="{ borderRadius: '20px', backgroundColor: datas[0].color }"
+            :class="$q.screen.gt.xs ? 'col-4' : 'col-12'"
+          >
+            <div style="height: 80vh">
+              <iframe
+                src="https://my.spline.design/untitled-604f9b42db975235f7f89b8e6c480871/"
+                frameborder="0"
+                width="100%"
+                height="100%"
+                class="q-pa-sm"
+              ></iframe>
+            </div>
+          </div>
+          <div :class="$q.screen.gt.xs ? 'col-8' : 'col-12'">
+            <q-scroll-area
+              style="height: 80vh"
+              visible
+              :thumb-style="thumbStyle"
+              ><div class="row q-px-md">
+                <div :class="$q.screen.gt.xs ? 'col-8' : 'col-12'">
+                  <div>
+                    <q-card
+                      class="my-card no-shadow"
+                      style="border-radius: 16px"
+                    >
+                      <q-card-section class="q-pa-none">
+                        <q-img
+                          src="https://cdn.quasar.dev/img/parallax2.jpg"
+                          style="border-radius: 16px"
+                          :ratio="16 / 7"
+                        />
+                      </q-card-section>
+                    </q-card>
+                  </div>
+                </div>
+                <div
+                  :class="$q.screen.gt.xs ? 'col-4 q-pl-sm' : 'col-12 q-pt-md'"
+                >
+                  <div>
+                    <q-card
+                      class="bg-grey-8 text-white text-weight-medium no-shadow q-mb-sm q-py-xs"
+                      style="border-radius: 16px; background-color: #94cf96"
+                    >
+                      <q-card-section class="row justify-between items-center">
+                        <div class="column items-start">
+                          <q-chip
+                            text-color="white"
+                            class="q-ml-none"
+                            :style="{ backgroundColor: datas[0].color }"
+                          >
+                            Role
+                          </q-chip>
+                          <div
+                            class="text-center text-subtitle1 text-weight-medium"
+                          >
+                            {{ datas[0].role }}
+                          </div>
+                        </div>
+                        <q-avatar rounded style="height: 100%">
+                          <img src="../assets/role.png" />
+                        </q-avatar>
+                      </q-card-section>
+                    </q-card>
+                    <q-card
+                      class="bg-grey-8 text-white text-weight-medium no-shadow q-py-xs"
+                      style="border-radius: 16px; background-color: #94cf96"
+                    >
+                      <q-card-section
+                        class="row justify-between items-center q-py-md"
+                      >
+                        <div class="column items-start">
+                          <q-chip
+                            text-color="white"
+                            class="q-ml-none"
+                            :style="{ backgroundColor: datas[0].color }"
+                          >
+                            Platform
+                          </q-chip>
+                          <div
+                            class="text-center text-subtitle1 text-weight-medium"
+                          >
+                            {{ datas[0].platform }}
+                          </div>
+                        </div>
+                        <q-avatar rounded style="height: 100%">
+                          <img src="../assets/mobile-apps.gif" />
+                        </q-avatar>
+                      </q-card-section>
+                    </q-card>
+                  </div>
+                </div>
+                <div class="col-12 q-pt-md">
+                  <div>
+                    <q-card
+                      class="text-grey-10 no-shadow"
+                      style="border-radius: 16px; border: 2px solid #bdbdbd"
+                    >
+                      <q-card-section>
+                        <div class="text-weight-bold">Description</div>
+                        <q-separator
+                          class="q-my-sm"
+                          size="2px"
+                          color="grey-4"
+                        />
+                        {{ datas[0].description }}
+                      </q-card-section>
+                    </q-card>
+                  </div>
+                </div>
+                <div class="col-12 q-pt-md">
+                  <div>
+                    <q-card
+                      class="text-grey-10 no-shadow"
+                      style="border-radius: 16px; border: 2px solid #bdbdbd"
+                    >
+                      <q-card-section>
+                        <div class="text-weight-bold">Features</div>
+                        <q-separator
+                          class="q-my-sm"
+                          size="2px"
+                          color="grey-4"
+                        />
 
-              <q-item-section>
-                <q-item-label>Title</q-item-label>
-                <q-item-label caption> Subhead </q-item-label>
-              </q-item-section>
-            </q-item>
-          </q-card>
-          <q-card class="dialogCard" style="height: 1000px">
-            <q-card-section>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </q-card-section>
-          </q-card>
-        </q-card-section></q-card-section
+                        <ul class="jobDesc q-pl-md">
+                          <li
+                            v-for="list in datas[0].featuresList"
+                            :key="list.feature"
+                          >
+                            {{ list.feature }}
+                          </li>
+                        </ul>
+                      </q-card-section>
+                    </q-card>
+                  </div>
+                </div>
+                <div class="col-12 q-pt-md">
+                  <div>
+                    <q-card
+                      class="text-grey-10 no-shadow"
+                      style="border-radius: 16px; border: 2px solid #bdbdbd"
+                    >
+                      <q-card-section>
+                        <div class="text-weight-bold">Tools</div>
+                        <q-separator
+                          class="q-my-sm"
+                          size="2px"
+                          color="grey-4"
+                        />
+                        <div class="row">
+                          <div
+                            class="column q-pr-md"
+                            v-for="list in datas[0].toolsList"
+                            :key="list.tool"
+                          >
+                            <q-avatar
+                              class="q-mb-xs"
+                              :style="{ backgroundColor: list.background }"
+                            >
+                              <q-icon size="sm">
+                                <q-img :src="list.icon" />
+                              </q-icon>
+                            </q-avatar>
+                            <div class="text-weight-medium q-pl-xs">
+                              {{ list.tool }}
+                            </div>
+                          </div>
+                        </div>
+                      </q-card-section>
+                    </q-card>
+                  </div>
+                </div>
+                <div class="col-12 q-pt-md">
+                  <div>
+                    <q-card
+                      class="text-grey-10 no-shadow"
+                      style="border-radius: 16px; border: 2px solid #bdbdbd"
+                    >
+                      <q-card-section>
+                        <div class="text-weight-bold">Design System</div>
+                        <q-separator
+                          class="q-my-sm"
+                          size="2px"
+                          color="grey-4"
+                        />
+                        <div>
+                          <div
+                            class="text-subtitle1"
+                            :style="{ color: datas[0].color }"
+                          >
+                            Color Palette
+                          </div>
+                          <div class="row q-mb-md">
+                            <div
+                              class="q-pa-sm q-mr-md"
+                              :style="{ backgroundColor: list.background }"
+                              v-for="list in datas[0].colorPaletteList"
+                              :key="list.title"
+                            >
+                              <div
+                                :style="{
+                                  height: '100px',
+                                  width: '100px',
+                                  backgroundColor: list.hex,
+                                }"
+                              ></div>
+                              <div class="text-subtitle2 text-weight-medium">
+                                {{ list.title }}
+                              </div>
+                              <div class="">Hex: {{ list.hex }}</div>
+                            </div>
+                          </div>
+                          <div
+                            class="text-subtitle1"
+                            :style="{ color: datas[0].color }"
+                          >
+                            Typography
+                          </div>
+                          <div class="text-subtitle1">
+                            Roboto: A quick fox jumps over the lazy dog.
+                          </div>
+                          <div class="row">
+                            <div class="text-subtitle1 q-pr-sm content-center">
+                              Font Size:
+                            </div>
+                            <div
+                              class="q-pr-md content-center"
+                              :style="{ fontSize: list.title }"
+                              v-for="list in datas[0].typographySizeList"
+                              :key="list.title"
+                            >
+                              {{ list.title }}
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="text-subtitle1 q-pr-sm content-center">
+                              Font Weight:
+                            </div>
+                            <div
+                              class="q-pr-md content-center text-subtitle1"
+                              :style="{ fontWeight: list.title }"
+                              v-for="list in datas[0].typographyWeightList"
+                              :key="list.title"
+                            >
+                              {{ list.title }}
+                            </div>
+                          </div>
+                        </div>
+                      </q-card-section>
+                    </q-card>
+                  </div>
+                </div>
+                <div class="col-12 q-pt-md">
+                  <div>
+                    <q-card
+                      class="text-grey-10 no-shadow"
+                      style="border-radius: 16px; border: 2px solid #bdbdbd"
+                    >
+                      <q-card-section>
+                        <div class="text-weight-bold">Timeline</div>
+                        <q-separator
+                          class="q-my-sm"
+                          size="2px"
+                          color="grey-4"
+                        />
+                        <q-timeline color="green" class="q-mb-none">
+                          <q-timeline-entry
+                            v-for="list in datas[0].timelinesList"
+                            :key="list.title"
+                            :title="list.title"
+                            :subtitle="list.date"
+                          >
+                            <div class="row">
+                              {{ list.decsription }}
+
+                              <q-img
+                                class="col-5 q-mr-sm"
+                                :src="list.image"
+                                style="border-radius: 16px"
+                                :ratio="16 / 9"
+                              />
+                            </div>
+                          </q-timeline-entry>
+                        </q-timeline>
+                      </q-card-section>
+                    </q-card>
+                  </div>
+                </div>
+                <div class="col-12 q-pt-md">
+                  <div>
+                    <q-card
+                      class="text-grey-10 no-shadow"
+                      style="border-radius: 16px; border: 2px solid #bdbdbd"
+                    >
+                      <q-card-section>
+                        <div class="row">
+                          <div
+                            class="text-weight-bold q-pr-sm"
+                            style="margin-top: 2px"
+                          >
+                            Screenshots
+                          </div>
+                          <!-- <q-btn
+                            round
+                            icon="chevron_left"
+                            @click="scrollLeft"
+                            :style="{ backgroundColor: datas[0].color }"
+                            size="xs"
+                            class="q-mr-sm"
+                          />
+                          <q-btn
+                            round
+                            icon="chevron_right"
+                            @click="scrollRight"
+                            :style="{ backgroundColor: datas[0].color }"
+                            size="xs"
+                            class="q-mr-sm"
+                          /> -->
+                        </div>
+
+                        <q-separator
+                          class="q-my-sm"
+                          size="2px"
+                          color="grey-4"
+                        />
+                        <div class="">
+                          <q-scroll-area
+                            style="height: 200px"
+                            :thumb-style="thumbStyle"
+                            visible
+                            ><div class="row no-wrap">
+                              <q-img
+                                v-for="list in datas[0].screenshots"
+                                :key="list.image"
+                                class="col-5 q-mr-md"
+                                :src="list.image"
+                                style="border-radius: 16px"
+                                :ratio="16 / 9"
+                              /></div
+                          ></q-scroll-area>
+                        </div>
+                      </q-card-section>
+                    </q-card>
+                  </div>
+                </div>
+                <div class="col-12 q-pt-md">
+                  <div>
+                    <q-card
+                      class="text-grey-10 no-shadow"
+                      style="border-radius: 16px; border: 2px solid #bdbdbd"
+                    >
+                      <q-card-section>
+                        <div class="text-weight-bold">
+                          Additional Information
+                        </div>
+                        <q-separator
+                          class="q-my-sm"
+                          size="2px"
+                          color="grey-4"
+                        />
+                        <ul
+                          class="jobDesc q-pl-md row"
+                          v-for="list in datas[0].informationsList"
+                          :key="list.title"
+                        >
+                          <li class="col-6">{{ list.title }}</li>
+                        </ul>
+                      </q-card-section>
+                    </q-card>
+                  </div>
+                </div>
+              </div></q-scroll-area
+            >
+          </div>
+        </div></q-card-section
       >
     </q-card>
       </q-dialog
@@ -760,8 +1064,63 @@
 import { onMounted, onUnmounted, reactive, ref } from 'vue';
 import ChipList from 'src/components/chipList.vue';
 import Typed from 'typed.js';
-import { QIcon } from 'quasar';
+import { QIcon, QScrollArea } from 'quasar';
 
+//data
+import dialogData from 'src/components/data/dialogData.js';
+
+interface Data {
+  id: number;
+  color: string;
+  background: string;
+  title: string;
+  role: string;
+  displayImage: string;
+  company: string;
+  avatar: string;
+  platform: string;
+  platformIcon: string;
+  threeDimensionModel: string;
+  dialogImage: string;
+  description: string;
+  featuresList: Array<{
+    feature: string;
+  }>;
+  toolsList: Array<{
+    tool: string;
+    icon: string;
+    background: string;
+  }>;
+  colorPaletteList: Array<{
+    title: string;
+    hex: string;
+    background: string;
+  }>;
+  typography: string;
+  typographySizeList: Array<{
+    title: string;
+  }>;
+  typographyWeightList: Array<{
+    title: string;
+  }>;
+  timelinesList: Array<{
+    date: string;
+    title: string;
+    decsription: string;
+    image: string;
+  }>;
+  screenshots: Array<{
+    image: string;
+  }>;
+  informationsList: Array<{
+    title: string;
+    image: string;
+  }>;
+}
+
+const datas = ref<Data[]>(dialogData);
+
+//images
 import figma from 'src/assets/Figma-logo.png';
 import html from 'src/assets/HTML5-Badge.png';
 import css from 'src/assets/CSS3-logo.png';
@@ -777,8 +1136,8 @@ import git from 'src/assets/Git-Icon.png';
 import locationIcon from 'src/assets/location.png';
 import educationIcon from 'src/assets/mortarboard.png';
 import gpaIcon from 'src/assets/gpa.png';
-// import mobile from 'src/assets/mobile-apps.gif';
-// import web from 'src/assets/web-developer.gif';
+import mobile from 'src/assets/mobile-apps.gif';
+import web from 'src/assets/web-developer.gif';
 
 const typedStrings =
   'a Designer, an Editor, a Web Developer, a Frontend Developer, a Graduate'; // This could be dynamic as well
@@ -790,7 +1149,7 @@ const thumbStyle = reactive({
   borderRadius: '5px',
   backgroundColor: '#1b5e20',
   width: '7px',
-  opacity: 0.75,
+  opacity: '0.75',
 });
 
 const handleScroll = () => {
@@ -895,80 +1254,80 @@ const chips = [
   { color: '#e9e9e9', text: 'Git', image: git },
 ];
 
-//const hoveredIndex = ref<number | null>(null);
+const hoveredIndex = ref<number | null>(null);
 
-// interface projectsCard {
-//   title: string;
-//   date: string;
-//   role: string;
-//   image: string;
-//   description: string;
-//   avatar: string;
-//   trailing: string;
-// }
+interface projectsCard {
+  title: string;
+  date: string;
+  role: string;
+  image: string;
+  description: string;
+  avatar: string;
+  trailing: string;
+}
 
-// const cardsContent = ref<projectsCard[]>([
-//   {
-//     title: 'Inventory Management (IM) mobile',
-//     date: '2022',
-//     role: 'UI & UX Designer',
-//     image: 'https://cdn.quasar.dev/img/mountains.jpg',
-//     description:
-//       'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-//     avatar: figma,
-//     trailing: mobile,
-//   },
-//   {
-//     title: 'MyPigFarm',
-//     date: 'November 2024',
-//     role: 'UI & UX Designer',
-//     image: 'https://cdn.quasar.dev/img/parallax2.jpg',
-//     description:
-//       "The paper was blank. It shouldn't have been. There should have been writing on the paper, at least a paragraph if not more.",
-//     avatar: figma,
-//     trailing: mobile,
-//   },
-//   {
-//     title: 'Charoen Pokphand Indonesia Commerce (CPIC)',
-//     date: 'December 2024',
-//     role: 'UI & UX Designer',
-//     image: 'https://picsum.photos/500/300',
-//     description:
-//       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
-//     avatar: figma,
-//     trailing: mobile,
-//   },
-//   {
-//     title: 'E-Comdiv',
-//     date: 'December 2024',
-//     role: 'UX Engineer',
-//     image: 'https://picsum.photos/500/300',
-//     description:
-//       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
-//     avatar: figma,
-//     trailing: web,
-//   },
-//   {
-//     title: 'Poultry Integration Web',
-//     date: 'December 2024',
-//     role: 'UX Engineer',
-//     image: 'https://picsum.photos/500/300',
-//     description:
-//       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
-//     avatar: figma,
-//     trailing: web,
-//   },
-//   {
-//     title: 'Finance.ai',
-//     date: 'December 2024',
-//     role: 'UX Engineer',
-//     image: 'https://picsum.photos/500/300',
-//     description:
-//       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
-//     avatar: figma,
-//     trailing: web,
-//   },
-// ]);
+const cardsContent = ref<projectsCard[]>([
+  {
+    title: 'Inventory Management (IM) mobile',
+    date: '2022',
+    role: 'UI & UX Designer',
+    image: 'https://cdn.quasar.dev/img/mountains.jpg',
+    description:
+      'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+    avatar: figma,
+    trailing: mobile,
+  },
+  {
+    title: 'MyPigFarm',
+    date: 'November 2024',
+    role: 'UI & UX Designer',
+    image: 'https://cdn.quasar.dev/img/parallax2.jpg',
+    description:
+      "The paper was blank. It shouldn't have been. There should have been writing on the paper, at least a paragraph if not more.",
+    avatar: figma,
+    trailing: mobile,
+  },
+  {
+    title: 'Charoen Pokphand Indonesia Commerce (CPIC)',
+    date: 'December 2024',
+    role: 'UI & UX Designer',
+    image: 'https://picsum.photos/500/300',
+    description:
+      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+    avatar: figma,
+    trailing: mobile,
+  },
+  {
+    title: 'E-Comdiv',
+    date: 'December 2024',
+    role: 'UX Engineer',
+    image: 'https://picsum.photos/500/300',
+    description:
+      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+    avatar: figma,
+    trailing: web,
+  },
+  {
+    title: 'Poultry Integration Web',
+    date: 'December 2024',
+    role: 'UX Engineer',
+    image: 'https://picsum.photos/500/300',
+    description:
+      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+    avatar: figma,
+    trailing: web,
+  },
+  {
+    title: 'Finance.ai',
+    date: 'December 2024',
+    role: 'UX Engineer',
+    image: 'https://picsum.photos/500/300',
+    description:
+      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
+    avatar: figma,
+    trailing: web,
+  },
+]);
 // Define the interface
 interface InfoItem {
   label: string;
@@ -1301,9 +1660,12 @@ ul li::marker {
       }
     }
   }
+  .projectDialog {
+    min-width: 400px;
+  }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (min-width: 600px) {
   #about {
     min-height: 100vh;
     .container-about-desc {
@@ -1316,6 +1678,9 @@ ul li::marker {
         font-size: 20px;
       }
     }
+  }
+  .projectDialog {
+    min-width: 400px;
   }
 }
 
@@ -1334,6 +1699,9 @@ ul li::marker {
         font-size: 20px;
       }
     }
+  }
+  .projectDialog {
+    min-width: 1200px;
   }
 }
 
