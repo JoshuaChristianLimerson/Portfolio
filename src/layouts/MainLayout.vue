@@ -590,11 +590,11 @@
             <q-card-section class="q-pa-none">
               <q-item>
                 <q-item-section avatar>
-                  <q-avatar class="bg-primary">
+                  <!-- <q-avatar class="bg-primary">
                     <q-icon size="sm">
                       <q-img :src="card.avatar" />
                     </q-icon>
-                  </q-avatar>
+                  </q-avatar> -->
                 </q-item-section>
 
                 <q-item-section>
@@ -645,14 +645,6 @@
       <q-card-section class="bg-white row q-py-xs">
         <div>
           <q-item>
-            <q-item-section avatar>
-              <q-avatar>
-                <q-icon size="sm">
-                  <q-img :src="datas[0].avatar" />
-                </q-icon>
-              </q-avatar>
-            </q-item-section>
-
             <q-item-section>
               <q-item-label class="text-weight-medium text-h6">{{
                 datas[0].title
@@ -685,7 +677,7 @@
           >
             <div style="height: 80vh">
               <iframe
-                src="https://my.spline.design/untitled-604f9b42db975235f7f89b8e6c480871/"
+                :src="datas[0].spline"
                 frameborder="0"
                 width="100%"
                 height="100%"
@@ -707,9 +699,10 @@
                     >
                       <q-card-section class="q-pa-none">
                         <q-img
-                          src="https://cdn.quasar.dev/img/parallax2.jpg"
+                          :src="datas[0].displayImage"
                           style="border-radius: 16px"
                           :ratio="16 / 7"
+                          fit
                         />
                       </q-card-section>
                     </q-card>
@@ -765,7 +758,7 @@
                           </div>
                         </div>
                         <q-avatar rounded style="height: 100%">
-                          <img src="../assets/mobile-apps.gif" />
+                          <img :src="datas[0].platformIcon" />
                         </q-avatar>
                       </q-card-section>
                     </q-card>
@@ -807,6 +800,7 @@
                           <li
                             v-for="list in datas[0].featuresList"
                             :key="list.feature"
+                            class="q-pb-md"
                           >
                             {{ list.feature }}
                           </li>
@@ -836,7 +830,7 @@
                           >
                             <q-avatar
                               class="q-mb-xs"
-                              :style="{ backgroundColor: list.background }"
+                              :style="{ backgroundColor: datas[0].background }"
                             >
                               <q-icon size="sm">
                                 <q-img :src="list.icon" />
@@ -981,22 +975,22 @@
                           >
                             Screenshots
                           </div>
-                          <!-- <q-btn
+                          <q-btn
                             round
                             icon="chevron_left"
-                            @click="scrollLeft"
+                            @click="animateScrollLeft"
                             :style="{ backgroundColor: datas[0].color }"
                             size="xs"
-                            class="q-mr-sm"
+                            class="q-mr-sm text-white"
                           />
                           <q-btn
                             round
                             icon="chevron_right"
-                            @click="scrollRight"
+                            @click="animateScrollRight"
                             :style="{ backgroundColor: datas[0].color }"
                             size="xs"
-                            class="q-mr-sm"
-                          /> -->
+                            class="q-mr-sm text-white"
+                          />
                         </div>
 
                         <q-separator
@@ -1006,18 +1000,22 @@
                         />
                         <div class="">
                           <q-scroll-area
-                            style="height: 200px"
+                            style="height: 650px"
                             :thumb-style="thumbStyle"
                             visible
+                            ref="scrollAreaRef"
                             ><div class="row no-wrap">
-                              <q-img
+                              <div
                                 v-for="list in datas[0].screenshots"
                                 :key="list.image"
-                                class="col-5 q-mr-md"
-                                :src="list.image"
-                                style="border-radius: 16px"
-                                :ratio="16 / 9"
-                              /></div
+                                style="width: 300px"
+                                class="q-pa-sm"
+                              >
+                                <q-img
+                                  :src="list.image"
+                                  style="border-radius: 16px"
+                                />
+                              </div></div
                           ></q-scroll-area>
                         </div>
                       </q-card-section>
@@ -1039,13 +1037,28 @@
                           size="2px"
                           color="grey-4"
                         />
-                        <ul
-                          class="jobDesc q-pl-md row"
-                          v-for="list in datas[0].informationsList"
-                          :key="list.title"
-                        >
-                          <li class="col-6">{{ list.title }}</li>
-                        </ul>
+                        <div class="row">
+                          <ul
+                            class="jobDesc q-pl-md col-6"
+                            v-for="list in datas[0].informationsList"
+                            :key="list.title"
+                          >
+                            <li>
+                              <div class="row">
+                                <q-icon
+                                  size="sm"
+                                  :name="list.icon"
+                                  color="grey-6"
+                                />
+                                <div class="text-weight-bold q-pl-sm">
+                                  {{ list.title }}
+                                </div>
+                              </div>
+
+                              {{ list.description }}
+                            </li>
+                          </ul>
+                        </div>
                       </q-card-section>
                     </q-card>
                   </div>
@@ -1077,12 +1090,11 @@ interface Data {
   role: string;
   displayImage: string;
   company: string;
-  avatar: string;
   platform: string;
   platformIcon: string;
-  threeDimensionModel: string;
   dialogImage: string;
   description: string;
+  spline: string;
   featuresList: Array<{
     feature: string;
   }>;
@@ -1113,8 +1125,9 @@ interface Data {
     image: string;
   }>;
   informationsList: Array<{
+    icon: string;
     title: string;
-    image: string;
+    description: string;
   }>;
 }
 
@@ -1138,6 +1151,12 @@ import educationIcon from 'src/assets/mortarboard.png';
 import gpaIcon from 'src/assets/gpa.png';
 import mobile from 'src/assets/mobile-apps.gif';
 import web from 'src/assets/web-developer.gif';
+import bctech from 'src/assets/posters/bctech.jpg';
+import cpic from 'src/assets/posters/cpic.jpg';
+import customerpersona from 'src/assets/posters/customerpersona.png';
+import comdiv from 'src/assets/posters/e-comdiv.jpg';
+import immobile from 'src/assets/posters/immobile.jpg';
+import mypigfarm from 'src/assets/posters/mypigfarm.jpg';
 
 const typedStrings =
   'a Designer, an Editor, a Web Developer, a Frontend Developer, a Graduate'; // This could be dynamic as well
@@ -1147,7 +1166,7 @@ const fullHeight = ref(false);
 
 const thumbStyle = reactive({
   borderRadius: '5px',
-  backgroundColor: '#1b5e20',
+  backgroundColor: '#616161',
   width: '7px',
   opacity: '0.75',
 });
@@ -1271,7 +1290,7 @@ const cardsContent = ref<projectsCard[]>([
     title: 'Inventory Management (IM) mobile',
     date: '2022',
     role: 'UI & UX Designer',
-    image: 'https://cdn.quasar.dev/img/mountains.jpg',
+    image: immobile,
     description:
       'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     avatar: figma,
@@ -1281,7 +1300,7 @@ const cardsContent = ref<projectsCard[]>([
     title: 'MyPigFarm',
     date: 'November 2024',
     role: 'UI & UX Designer',
-    image: 'https://cdn.quasar.dev/img/parallax2.jpg',
+    image: mypigfarm,
     description:
       "The paper was blank. It shouldn't have been. There should have been writing on the paper, at least a paragraph if not more.",
     avatar: figma,
@@ -1291,7 +1310,7 @@ const cardsContent = ref<projectsCard[]>([
     title: 'Charoen Pokphand Indonesia Commerce (CPIC)',
     date: 'December 2024',
     role: 'UI & UX Designer',
-    image: 'https://picsum.photos/500/300',
+    image: cpic,
     description:
       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
     avatar: figma,
@@ -1301,27 +1320,27 @@ const cardsContent = ref<projectsCard[]>([
     title: 'E-Comdiv',
     date: 'December 2024',
     role: 'UX Engineer',
-    image: 'https://picsum.photos/500/300',
+    image: comdiv,
     description:
       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
     avatar: figma,
     trailing: web,
   },
   {
-    title: 'Poultry Integration Web',
+    title: 'Customer Persona',
     date: 'December 2024',
     role: 'UX Engineer',
-    image: 'https://picsum.photos/500/300',
+    image: customerpersona,
     description:
       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
     avatar: figma,
     trailing: web,
   },
   {
-    title: 'Finance.ai',
+    title: 'BC-Tech',
     date: 'December 2024',
-    role: 'UX Engineer',
-    image: 'https://picsum.photos/500/300',
+    role: 'Front End Developer',
+    image: bctech,
     description:
       'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
     avatar: figma,
@@ -1343,6 +1362,31 @@ const infoList = ref<InfoItem[]>([
   { label: 'Email', value: 'jcljoshualim@gmail.com' },
   { label: 'Languages', value: 'English, Bahasa Indonesia' },
 ]);
+
+interface ScrollArea {
+  setScrollPosition: (
+    direction: 'horizontal' | 'vertical',
+    position: number,
+    duration: number
+  ) => void;
+}
+
+const scrollAreaRef = ref<ScrollArea | null>(null);
+const position = ref(0);
+
+const animateScrollLeft = () => {
+  if (scrollAreaRef.value) {
+    position.value -= 200; // Update position first
+    scrollAreaRef.value.setScrollPosition('horizontal', position.value, 200);
+  }
+};
+
+const animateScrollRight = () => {
+  if (scrollAreaRef.value) {
+    position.value += 200; // Update position first
+    scrollAreaRef.value.setScrollPosition('horizontal', position.value, 200);
+  }
+};
 </script>
 
 <style scoped>
@@ -1734,21 +1778,21 @@ ul li::marker {
 }
 
 .projectCard {
-  opacity: 1;
+  filter: grayscale(0);
   transition: opacity 0.25s ease-in-out, transform 0.25s ease-in-out;
 }
 
 .projectCard.hovered {
-  opacity: 1 !important;
+  filter: grayscale(0);
   transform: scale(1.05);
 }
 
 .projectCard.notHovered {
-  opacity: 0.5 !important;
+  filter: grayscale(0.5);
 }
 
 .projectCard:not(.hovered):not(.notHovered) {
-  opacity: 1 !important;
+  filter: grayscale(0);
   transform: scale(1);
 }
 </style>
