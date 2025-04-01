@@ -579,7 +579,7 @@
               notHovered: hoveredIndex !== null && hoveredIndex !== index,
             }"
             @mouseenter="hoveredIndex = index"
-            @mouseleave="hoveredIndex = null"
+            @mouseleave="hoveredIndex = index"
             @click="fullHeight = true"
           >
             <img
@@ -640,16 +640,18 @@
   <q-dialog v-model="fullHeight">
     <q-card
       class="projectDialog"
-      :style="{ backgroundColor: datas[0].background }"
+      :style="{ backgroundColor: datas[hoveredIndex].background }"
     >
       <q-card-section class="bg-white row q-py-xs">
         <div>
           <q-item>
             <q-item-section>
               <q-item-label class="text-weight-medium text-h6">{{
-                datas[0].title
+                datas[hoveredIndex].title
               }}</q-item-label>
-              <q-item-label caption>{{ datas[0].company }}</q-item-label>
+              <q-item-label caption>{{
+                datas[hoveredIndex].company
+              }}</q-item-label>
             </q-item-section>
           </q-item>
         </div>
@@ -662,7 +664,7 @@
             v-close-popup
             size="sm"
             class="q-py-none q-my-xs"
-            :style="{ backgroundColor: datas[0].color }"
+            :style="{ backgroundColor: datas[hoveredIndex].color }"
           />
         </div>
       </q-card-section>
@@ -672,12 +674,15 @@
         ><div class="row">
           <div
             style="border-radius: 20px"
-            :style="{ borderRadius: '20px', backgroundColor: datas[0].color }"
+            :style="{
+              borderRadius: '20px',
+              backgroundColor: datas[hoveredIndex].color,
+            }"
             :class="$q.screen.gt.xs ? 'col-4' : 'col-12'"
           >
             <div style="height: 80vh">
               <iframe
-                :src="datas[0].spline"
+                :src="datas[hoveredIndex].spline"
                 frameborder="0"
                 width="100%"
                 height="100%"
@@ -699,7 +704,7 @@
                     >
                       <q-card-section class="q-pa-none">
                         <q-img
-                          :src="datas[0].displayImage"
+                          :src="datas[hoveredIndex].displayImage"
                           style="border-radius: 16px"
                           :ratio="16 / 7"
                           fit
@@ -721,14 +726,16 @@
                           <q-chip
                             text-color="white"
                             class="q-ml-none"
-                            :style="{ backgroundColor: datas[0].color }"
+                            :style="{
+                              backgroundColor: datas[hoveredIndex].color,
+                            }"
                           >
                             Role
                           </q-chip>
                           <div
                             class="text-center text-subtitle1 text-weight-medium"
                           >
-                            {{ datas[0].role }}
+                            {{ datas[hoveredIndex].role }}
                           </div>
                         </div>
                         <q-avatar rounded style="height: 100%">
@@ -747,18 +754,20 @@
                           <q-chip
                             text-color="white"
                             class="q-ml-none"
-                            :style="{ backgroundColor: datas[0].color }"
+                            :style="{
+                              backgroundColor: datas[hoveredIndex].color,
+                            }"
                           >
                             Platform
                           </q-chip>
                           <div
                             class="text-center text-subtitle1 text-weight-medium"
                           >
-                            {{ datas[0].platform }}
+                            {{ datas[hoveredIndex].platform }}
                           </div>
                         </div>
                         <q-avatar rounded style="height: 100%">
-                          <img :src="datas[0].platformIcon" />
+                          <img :src="datas[hoveredIndex].platformIcon" />
                         </q-avatar>
                       </q-card-section>
                     </q-card>
@@ -777,7 +786,7 @@
                           size="2px"
                           color="grey-4"
                         />
-                        {{ datas[0].description }}
+                        {{ datas[hoveredIndex].description }}
                       </q-card-section>
                     </q-card>
                   </div>
@@ -798,7 +807,7 @@
 
                         <ul class="jobDesc q-pl-md">
                           <li
-                            v-for="list in datas[0].featuresList"
+                            v-for="list in datas[hoveredIndex].featuresList"
                             :key="list.feature"
                             class="q-pb-md"
                           >
@@ -825,12 +834,14 @@
                         <div class="row">
                           <div
                             class="column q-pr-md"
-                            v-for="list in datas[0].toolsList"
+                            v-for="list in datas[hoveredIndex].toolsList"
                             :key="list.tool"
                           >
                             <q-avatar
                               class="q-mb-xs"
-                              :style="{ backgroundColor: datas[0].background }"
+                              :style="{
+                                backgroundColor: datas[hoveredIndex].background,
+                              }"
                             >
                               <q-icon size="sm">
                                 <q-img :src="list.icon" />
@@ -861,7 +872,7 @@
                         <div>
                           <div
                             class="text-subtitle1"
-                            :style="{ color: datas[0].color }"
+                            :style="{ color: datas[hoveredIndex].color }"
                           >
                             Color Palette
                           </div>
@@ -869,7 +880,8 @@
                             <div
                               class="q-pa-sm q-mr-md"
                               :style="{ backgroundColor: list.background }"
-                              v-for="list in datas[0].colorPaletteList"
+                              v-for="list in datas[hoveredIndex]
+                                .colorPaletteList"
                               :key="list.title"
                             >
                               <div
@@ -887,7 +899,7 @@
                           </div>
                           <div
                             class="text-subtitle1"
-                            :style="{ color: datas[0].color }"
+                            :style="{ color: datas[hoveredIndex].color }"
                           >
                             Typography
                           </div>
@@ -901,7 +913,8 @@
                             <div
                               class="q-pr-md content-center"
                               :style="{ fontSize: list.title }"
-                              v-for="list in datas[0].typographySizeList"
+                              v-for="list in datas[hoveredIndex]
+                                .typographySizeList"
                               :key="list.title"
                             >
                               {{ list.title }}
@@ -914,7 +927,8 @@
                             <div
                               class="q-pr-md content-center text-subtitle1"
                               :style="{ fontWeight: list.title }"
-                              v-for="list in datas[0].typographyWeightList"
+                              v-for="list in datas[hoveredIndex]
+                                .typographyWeightList"
                               :key="list.title"
                             >
                               {{ list.title }}
@@ -938,9 +952,9 @@
                           size="2px"
                           color="grey-4"
                         />
-                        <q-timeline color="green" class="q-mb-none">
+                        <q-timeline color="grey-8" class="q-mb-none">
                           <q-timeline-entry
-                            v-for="list in datas[0].timelinesList"
+                            v-for="list in datas[hoveredIndex].timelinesList"
                             :key="list.title"
                             :title="list.title"
                             :subtitle="list.date"
@@ -979,7 +993,9 @@
                             round
                             icon="chevron_left"
                             @click="animateScrollLeft"
-                            :style="{ backgroundColor: datas[0].color }"
+                            :style="{
+                              backgroundColor: datas[hoveredIndex].color,
+                            }"
                             size="xs"
                             class="q-mr-sm text-white"
                           />
@@ -987,7 +1003,9 @@
                             round
                             icon="chevron_right"
                             @click="animateScrollRight"
-                            :style="{ backgroundColor: datas[0].color }"
+                            :style="{
+                              backgroundColor: datas[hoveredIndex].color,
+                            }"
                             size="xs"
                             class="q-mr-sm text-white"
                           />
@@ -1006,7 +1024,7 @@
                             ref="scrollAreaRef"
                             ><div class="row no-wrap">
                               <div
-                                v-for="list in datas[0].screenshots"
+                                v-for="list in datas[hoveredIndex].screenshots"
                                 :key="list.image"
                                 style="width: 300px"
                                 class="q-pa-sm"
@@ -1040,7 +1058,7 @@
                         <div class="row">
                           <ul
                             class="jobDesc q-pl-md col-6"
-                            v-for="list in datas[0].informationsList"
+                            v-for="list in datas[hoveredIndex].informationsList"
                             :key="list.title"
                           >
                             <li>
@@ -1273,14 +1291,13 @@ const chips = [
   { color: '#e9e9e9', text: 'Git', image: git },
 ];
 
-const hoveredIndex = ref<number | null>(null);
+const hoveredIndex = ref<number>(-1);
 
 interface projectsCard {
   title: string;
   date: string;
   role: string;
   image: string;
-  description: string;
   avatar: string;
   trailing: string;
 }
@@ -1288,31 +1305,25 @@ interface projectsCard {
 const cardsContent = ref<projectsCard[]>([
   {
     title: 'Inventory Management (IM) mobile',
-    date: '2022',
+    date: 'June 2023',
     role: 'UI & UX Designer',
     image: immobile,
-    description:
-      'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
     avatar: figma,
     trailing: mobile,
   },
   {
     title: 'MyPigFarm',
-    date: 'November 2024',
+    date: 'December 2023',
     role: 'UI & UX Designer',
     image: mypigfarm,
-    description:
-      "The paper was blank. It shouldn't have been. There should have been writing on the paper, at least a paragraph if not more.",
     avatar: figma,
     trailing: mobile,
   },
   {
     title: 'Charoen Pokphand Indonesia Commerce (CPIC)',
-    date: 'December 2024',
+    date: 'September 2024',
     role: 'UI & UX Designer',
     image: cpic,
-    description:
-      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
     avatar: figma,
     trailing: mobile,
   },
@@ -1321,8 +1332,6 @@ const cardsContent = ref<projectsCard[]>([
     date: 'December 2024',
     role: 'UX Engineer',
     image: comdiv,
-    description:
-      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
     avatar: figma,
     trailing: web,
   },
@@ -1331,8 +1340,6 @@ const cardsContent = ref<projectsCard[]>([
     date: 'December 2024',
     role: 'UX Engineer',
     image: customerpersona,
-    description:
-      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
     avatar: figma,
     trailing: web,
   },
@@ -1341,8 +1348,6 @@ const cardsContent = ref<projectsCard[]>([
     date: 'December 2024',
     role: 'Front End Developer',
     image: bctech,
-    description:
-      'Why do Americans have so many different types of towels? We have beach towels, hand towels, bath towels, dish towels, camping towels, quick-dry towels, and let’s not forget paper towels.',
     avatar: figma,
     trailing: web,
   },
@@ -1788,7 +1793,7 @@ ul li::marker {
 }
 
 .projectCard.notHovered {
-  filter: grayscale(0.5);
+  filter: grayscale(0);
 }
 
 .projectCard:not(.hovered):not(.notHovered) {
