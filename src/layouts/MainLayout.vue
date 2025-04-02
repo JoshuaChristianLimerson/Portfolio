@@ -690,7 +690,7 @@
               ></iframe>
             </div>
           </div>
-          <div :class="$q.screen.gt.xs ? 'col-8' : 'col-12'">
+          <div :class="$q.screen.gt.xs ? 'col' : 'col-12'">
             <q-scroll-area
               style="height: 80vh"
               visible
@@ -1018,7 +1018,14 @@
                         />
                         <div class="">
                           <q-scroll-area
-                            style="height: 650px"
+                            :style="{
+                              height:
+                                hoveredIndex <= 2
+                                  ? '650px'
+                                  : hoveredIndex <= 5
+                                  ? '200px'
+                                  : 'auto',
+                            }"
                             :thumb-style="thumbStyle"
                             visible
                             ref="scrollAreaRef"
