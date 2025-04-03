@@ -379,12 +379,12 @@
               <q-timeline color="primary">
                 <q-timeline-entry
                   title="PT Charoen Pokphand Indonesia Tbk"
-                  subtitle="August 2022 - Present (2 years 5 months)"
+                  subtitle="August 2022 - Present (2 Years 7 Months)"
                 >
                   <q-timeline color="primary">
                     <q-timeline-entry
                       title="Ux Engineer"
-                      subtitle="March 2023 - Present (1 Year 10 Months)"
+                      subtitle="March 2023 - Present (2 Years)"
                     >
                       <div class="text-subtitle1">
                         <ul class="jobDesc">
@@ -573,7 +573,7 @@
         >
           <q-card
             style="border-radius: 12px"
-            class="shadow-3 projectCard cursor-pointer"
+            class="shadow-8 projectCard cursor-pointer"
             :class="{
               hovered: hoveredIndex === index,
               notHovered: hoveredIndex !== null && hoveredIndex !== index,
@@ -706,7 +706,7 @@
                         <q-img
                           :src="datas[hoveredIndex].displayImage"
                           style="border-radius: 16px"
-                          :ratio="16 / 7"
+                          :ratio="16 / 9"
                           fit
                         />
                       </q-card-section>
@@ -718,7 +718,7 @@
                 >
                   <div>
                     <q-card
-                      class="bg-grey-8 text-white text-weight-medium no-shadow q-mb-sm q-py-xs"
+                      class="bg-grey-8 text-white text-weight-medium no-shadow q-mb-lg q-py-md"
                       style="border-radius: 16px; background-color: #94cf96"
                     >
                       <q-card-section class="row justify-between items-center">
@@ -744,7 +744,7 @@
                       </q-card-section>
                     </q-card>
                     <q-card
-                      class="bg-grey-8 text-white text-weight-medium no-shadow q-py-xs"
+                      class="bg-grey-8 text-white text-weight-medium no-shadow q-py-md"
                       style="border-radius: 16px; background-color: #94cf96"
                     >
                       <q-card-section
@@ -939,7 +939,7 @@
                     </q-card>
                   </div>
                 </div>
-                <div class="col-12 q-pt-md">
+                <!-- <div class="col-12 q-pt-md">
                   <div>
                     <q-card
                       class="text-grey-10 no-shadow"
@@ -974,7 +974,7 @@
                       </q-card-section>
                     </q-card>
                   </div>
-                </div>
+                </div> -->
                 <div class="col-12 q-pt-md">
                   <div>
                     <q-card
@@ -1336,7 +1336,7 @@ const cardsContent = ref<projectsCard[]>([
   },
   {
     title: 'E-Comdiv',
-    date: 'December 2024',
+    date: 'March 2024',
     role: 'UX Engineer',
     image: comdiv,
     avatar: figma,
@@ -1344,7 +1344,7 @@ const cardsContent = ref<projectsCard[]>([
   },
   {
     title: 'Customer Persona',
-    date: 'December 2024',
+    date: 'July 2023',
     role: 'UX Engineer',
     image: customerpersona,
     avatar: figma,
@@ -1352,7 +1352,7 @@ const cardsContent = ref<projectsCard[]>([
   },
   {
     title: 'BC-Tech',
-    date: 'December 2024',
+    date: 'March 2025',
     role: 'Front End Developer',
     image: bctech,
     avatar: figma,
