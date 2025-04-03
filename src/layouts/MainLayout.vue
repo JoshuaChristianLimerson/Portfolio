@@ -767,9 +767,7 @@
                           </div>
                         </div>
                         <q-avatar rounded style="height: 100%">
-                          <img
-                            :src="datas[hoveredIndex].platformIcon.toString()"
-                          />
+                          <img :src="datas[hoveredIndex].platformIcon" />
                         </q-avatar>
                       </q-card-section>
                     </q-card>

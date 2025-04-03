@@ -1,3 +1,6 @@
+import mobile from 'src/assets/mobile-apps.gif';
+import web from 'src/assets/web-developer.gif';
+
 export default [
   {
     id: 1,
@@ -8,7 +11,7 @@ export default [
     displayImage: 'src/assets/posters/immobile.jpg',
     company: 'Crown Pacific Beverage Pte Ltd',
     platform: 'Mobile Application',
-    platformIcon: 'src/assets/mobile-apps.gif',
+    platformIcon: mobile,
     dialogImage: 'src/assets/posters/immobile.jpg',
     description:
       'IM Mobile is a warehouse management system (WMS) mobile application that supports warehouse to monitor the entry and exit of stocks. So that every stock that is being picked and received is accurate and precisely recorded. The user of IM Mobile is split into roles.',
@@ -137,7 +140,7 @@ export default [
     displayImage: 'src/assets/posters/mypigfarm.jpg',
     company: 'PT Charoen Pokphand Indonesia Tbk',
     platform: 'Mobile Application',
-    platformIcon: 'src/assets/mobile-apps.gif',
+    platformIcon: mobile,
     dialogImage: 'src/assets/posters/mypigfarm.jpg',
     description:
       'The My Pigfarm app is a powerful tool for pig breeders, allowing easy tracking of breeding, farrowing, and weaning. It helps manage stock, monitor pig growth, and streamline the selling process, all in real-time. With this app, breeders can efficiently oversee their farm’s productivity and operations from anywhere.',
@@ -332,7 +335,7 @@ export default [
     displayImage: 'src/assets/posters/cpic.jpg',
     company: 'PT Charoen Pokphand Indonesia Tbk',
     platform: 'Mobile Application',
-    platformIcon: 'src/assets/mobile-apps.gif',
+    platformIcon: mobile,
     dialogImage: 'src/assets/posters/cpic.jpg',
     description:
       'CPI Commerce (CPIC) is an innovative mobile app designed to streamline and simplify the management of Purchase Requisitions (PR) and access to CPIs e-Townhall. With its user-friendly interface and robust features, CPIC ensures efficient procurement workflows and smooth document management.',
@@ -468,7 +471,7 @@ export default [
     displayImage: 'src/assets/posters/e-comdiv.jpg',
     company: 'PT Charoen Pokphand Indonesia Tbk',
     platform: 'Web Application',
-    platformIcon: 'src/assets/web-developer.gif',
+    platformIcon: web,
     dialogImage: 'src/assets/posters/e-comdiv.jpg',
     description:
       'E-Comdiv is a web application that simplifies procurement by enabling registered users to order goods and services online. It connects users with preferred suppliers through a centralized system, automating tasks like purchase orders, invoicing, and supplier management to save time and reduce costs',
@@ -636,7 +639,7 @@ export default [
     displayImage: 'src/assets/posters/customerpersona.png',
     company: 'PT Charoen Pokphand Indonesia Tbk',
     platform: 'Web Application',
-    platformIcon: 'src/assets/web-developer.gif',
+    platformIcon: web,
     dialogImage: 'src/assets/posters/customerpersona.png',
     description:
       'Customer Persona is a web application that helps users to find all information related to customers in PT. Charoen Pokphand Indonesia Tbk company. With this web app, it can improve services for searching all information related to customer.',
@@ -809,7 +812,7 @@ export default [
     displayImage: 'src/assets/posters/bctech.jpg',
     company: 'PT BISI International Tbk',
     platform: 'Web Application',
-    platformIcon: 'src/assets/web-developer.gif',
+    platformIcon: web,
     dialogImage: 'src/assets/posters/bctech.jpg',
     description:
       'BC Tech is a streamlined content management system for an authorized DJI partner in Indonesia, enabling users to easily update website content related to drone sales. It supports efficient management of product details, promotions, and customer interactions, helping the business maintain a professional online presence and optimize its operations.',
