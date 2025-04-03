@@ -1,5 +1,123 @@
 import mobile from 'src/assets/mobile-apps.gif';
 import web from 'src/assets/web-developer.gif';
+//posters
+import cpic from 'src/assets/posters/cpic.jpg';
+import bctech from 'src/assets/posters/bctech.jpg';
+import cp from 'src/assets/posters/customerpersona.png';
+import ecomdiv from 'src/assets/posters/e-comdiv.jpg';
+import immobile from 'src/assets/posters/immobile.jpg';
+import mypigfarm from 'src/assets/posters/mypigfarm.jpg';
+//icons
+import figma from 'src/assets/Figma-logo.png';
+import html from 'src/assets/HTML5-Badge.png';
+import css from 'src/assets/CSS3-logo.png';
+import javascript from 'src/assets/Javascript-logo.png';
+import typescript from 'src/assets/Typescript-logo.png';
+import vue3 from 'src/assets/Vue-logo.png';
+import quasar from 'src/assets/quasar.png';
+import msoffice from 'src/assets/MSOffice-logo.png';
+import canva from 'src/assets/Canva-icon.png';
+import git from 'src/assets/Git-Icon.png';
+//immobile
+import immobile1 from 'src/assets/immobile/1.png';
+import immobile2 from 'src/assets/immobile/2.png';
+import immobile3 from 'src/assets/immobile/3.png';
+import immobile4 from 'src/assets/immobile/4.png';
+import immobile5 from 'src/assets/immobile/5.png';
+import immobile6 from 'src/assets/immobile/6.png';
+import immobile7 from 'src/assets/immobile/7.png';
+import immobile9 from 'src/assets/immobile/9.png';
+import immobile10 from 'src/assets/immobile/10.png';
+import immobile11 from 'src/assets/immobile/11.png';
+import immobile13 from 'src/assets/immobile/13.png';
+import immobile14 from 'src/assets/immobile/14.png';
+import immobile15 from 'src/assets/immobile/15.png';
+import immobile16 from 'src/assets/immobile/16.png';
+//mypigfarm
+import mypigfarm1 from 'src/assets/mypigfarm/1.png';
+import mypigfarm2 from 'src/assets/mypigfarm/2.png';
+import mypigfarm3 from 'src/assets/mypigfarm/3.png';
+import mypigfarm4 from 'src/assets/mypigfarm/4.png';
+import mypigfarm5 from 'src/assets/mypigfarm/5.png';
+import mypigfarm6 from 'src/assets/mypigfarm/6.png';
+import mypigfarm7 from 'src/assets/mypigfarm/7.png';
+import mypigfarm8 from 'src/assets/mypigfarm/8.png';
+import mypigfarm9 from 'src/assets/mypigfarm/9.png';
+import mypigfarm10 from 'src/assets/mypigfarm/10.png';
+import mypigfarm11 from 'src/assets/mypigfarm/11.png';
+import mypigfarm12 from 'src/assets/mypigfarm/12.png';
+import mypigfarm13 from 'src/assets/mypigfarm/13.png';
+import mypigfarm14 from 'src/assets/mypigfarm/14.png';
+import mypigfarm15 from 'src/assets/mypigfarm/15.png';
+import mypigfarm16 from 'src/assets/mypigfarm/16.png';
+//cpic
+import cpic1 from 'src/assets/cpic/1.png';
+import cpic2 from 'src/assets/cpic/2.png';
+import cpic3 from 'src/assets/cpic/3.png';
+import cpic4 from 'src/assets/cpic/4.png';
+import cpic5 from 'src/assets/cpic/5.png';
+import cpic6 from 'src/assets/cpic/6.png';
+import cpic7 from 'src/assets/cpic/7.png';
+import cpic8 from 'src/assets/cpic/8.png';
+import cpic9 from 'src/assets/cpic/9.png';
+import cpic10 from 'src/assets/cpic/10.png';
+import cpic11 from 'src/assets/cpic/11.png';
+import cpic12 from 'src/assets/cpic/12.png';
+import cpic13 from 'src/assets/cpic/13.png';
+import cpic14 from 'src/assets/cpic/14.png';
+import cpic15 from 'src/assets/cpic/15.png';
+import cpic16 from 'src/assets/cpic/16.png';
+//cpic
+import ecomdiv1 from 'src/assets/ecomdiv/1.png';
+import ecomdiv2 from 'src/assets/ecomdiv/2.png';
+import ecomdiv3 from 'src/assets/ecomdiv/3.png';
+import ecomdiv4 from 'src/assets/ecomdiv/4.png';
+import ecomdiv5 from 'src/assets/ecomdiv/5.png';
+import ecomdiv6 from 'src/assets/ecomdiv/6.png';
+import ecomdiv7 from 'src/assets/ecomdiv/7.png';
+import ecomdiv8 from 'src/assets/ecomdiv/8.png';
+import ecomdiv9 from 'src/assets/ecomdiv/9.png';
+import ecomdiv10 from 'src/assets/ecomdiv/10.png';
+import ecomdiv11 from 'src/assets/ecomdiv/11.png';
+import ecomdiv12 from 'src/assets/ecomdiv/12.png';
+import ecomdiv13 from 'src/assets/ecomdiv/13.png';
+import ecomdiv14 from 'src/assets/ecomdiv/14.png';
+import ecomdiv15 from 'src/assets/ecomdiv/15.png';
+import ecomdiv16 from 'src/assets/ecomdiv/16.png';
+//cpic
+import cp1 from 'src/assets/cp/1.png';
+import cp2 from 'src/assets/cp/2.png';
+import cp3 from 'src/assets/cp/3.png';
+import cp4 from 'src/assets/cp/4.png';
+import cp5 from 'src/assets/cp/5.png';
+import cp6 from 'src/assets/cp/6.png';
+import cp7 from 'src/assets/cp/7.png';
+import cp8 from 'src/assets/cp/8.png';
+import cp9 from 'src/assets/cp/9.png';
+import cp10 from 'src/assets/cp/10.png';
+import cp11 from 'src/assets/cp/11.png';
+import cp12 from 'src/assets/cp/12.png';
+import cp13 from 'src/assets/cp/13.png';
+import cp14 from 'src/assets/cp/14.png';
+import cp15 from 'src/assets/cp/15.png';
+import cp16 from 'src/assets/cp/16.png';
+//bctech
+import bctech1 from 'src/assets/bctech/1.png';
+import bctech2 from 'src/assets/bctech/2.png';
+import bctech3 from 'src/assets/bctech/3.png';
+import bctech4 from 'src/assets/bctech/4.png';
+import bctech5 from 'src/assets/bctech/5.png';
+import bctech6 from 'src/assets/bctech/6.png';
+import bctech7 from 'src/assets/bctech/7.png';
+import bctech8 from 'src/assets/bctech/8.png';
+import bctech9 from 'src/assets/bctech/9.png';
+import bctech10 from 'src/assets/bctech/10.png';
+import bctech11 from 'src/assets/bctech/11.png';
+import bctech12 from 'src/assets/bctech/12.png';
+import bctech13 from 'src/assets/bctech/13.png';
+import bctech14 from 'src/assets/bctech/14.png';
+import bctech15 from 'src/assets/bctech/15.png';
+import bctech16 from 'src/assets/bctech/16.png';
 
 export default [
   {
@@ -8,11 +126,11 @@ export default [
     background: '#fdd9d7',
     title: 'Inventory Management (IM) Mobile',
     role: 'UI / UX Designer',
-    displayImage: 'src/assets/posters/immobile.jpg',
+    displayImage: immobile,
     company: 'Crown Pacific Beverage Pte Ltd',
     platform: 'Mobile Application',
     platformIcon: mobile,
-    dialogImage: 'src/assets/posters/immobile.jpg',
+    dialogImage: immobile,
     description:
       'IM Mobile is a warehouse management system (WMS) mobile application that supports warehouse to monitor the entry and exit of stocks. So that every stock that is being picked and received is accurate and precisely recorded. The user of IM Mobile is split into roles.',
     spline:
@@ -34,17 +152,17 @@ export default [
     toolsList: [
       {
         tool: 'Figma',
-        icon: 'src/assets/Figma-logo.png',
+        icon: figma,
         background: '#c8e6c9',
       },
       {
         tool: 'Canva',
-        icon: 'src/assets/Canva-icon.png',
+        icon: canva,
         background: '#c8e6c9',
       },
       {
         tool: 'Office',
-        icon: 'src/assets/MSOffice-logo.png',
+        icon: msoffice,
         background: '#c8e6c9',
       },
     ],
@@ -83,20 +201,20 @@ export default [
       },
     ],
     screenshots: [
-      { image: 'src/assets/immobile/1.png' },
-      { image: 'src/assets/immobile/2.png' },
-      { image: 'src/assets/immobile/3.png' },
-      { image: 'src/assets/immobile/4.png' },
-      { image: 'src/assets/immobile/5.png' },
-      { image: 'src/assets/immobile/6.png' },
-      { image: 'src/assets/immobile/7.png' },
-      { image: 'src/assets/immobile/9.png' },
-      { image: 'src/assets/immobile/10.png' },
-      { image: 'src/assets/immobile/11.png' },
-      { image: 'src/assets/immobile/13.png' },
-      { image: 'src/assets/immobile/14.png' },
-      { image: 'src/assets/immobile/15.png' },
-      { image: 'src/assets/immobile/16.png' },
+      { image: immobile1 },
+      { image: immobile2 },
+      { image: immobile3 },
+      { image: immobile4 },
+      { image: immobile5 },
+      { image: immobile6 },
+      { image: immobile7 },
+      { image: immobile9 },
+      { image: immobile10 },
+      { image: immobile11 },
+      { image: immobile13 },
+      { image: immobile14 },
+      { image: immobile15 },
+      { image: immobile16 },
     ],
     informationsList: [
       {
@@ -137,11 +255,11 @@ export default [
     background: '#e7f3da',
     title: 'My PigFarm',
     role: 'UI / UX Designer',
-    displayImage: 'src/assets/posters/mypigfarm.jpg',
+    displayImage: mypigfarm,
     company: 'PT Charoen Pokphand Indonesia Tbk',
     platform: 'Mobile Application',
     platformIcon: mobile,
-    dialogImage: 'src/assets/posters/mypigfarm.jpg',
+    dialogImage: mypigfarm,
     description:
       'The My Pigfarm app is a powerful tool for pig breeders, allowing easy tracking of breeding, farrowing, and weaning. It helps manage stock, monitor pig growth, and streamline the selling process, all in real-time. With this app, breeders can efficiently oversee their farm’s productivity and operations from anywhere.',
     spline:
@@ -225,17 +343,17 @@ export default [
     toolsList: [
       {
         tool: 'Figma',
-        icon: 'src/assets/Figma-logo.png',
+        icon: figma,
         background: '#c8e6c9',
       },
       {
         tool: 'Canva',
-        icon: 'src/assets/Canva-icon.png',
+        icon: canva,
         background: '#c8e6c9',
       },
       {
         tool: 'Office',
-        icon: 'src/assets/MSOffice-logo.png',
+        icon: msoffice,
         background: '#c8e6c9',
       },
     ],
@@ -276,22 +394,22 @@ export default [
       },
     ],
     screenshots: [
-      { image: 'src/assets/mypigfarm/1.png' },
-      { image: 'src/assets/mypigfarm/2.png' },
-      { image: 'src/assets/mypigfarm/3.png' },
-      { image: 'src/assets/mypigfarm/4.png' },
-      { image: 'src/assets/mypigfarm/5.png' },
-      { image: 'src/assets/mypigfarm/6.png' },
-      { image: 'src/assets/mypigfarm/7.png' },
-      { image: 'src/assets/mypigfarm/8.png' },
-      { image: 'src/assets/mypigfarm/9.png' },
-      { image: 'src/assets/mypigfarm/10.png' },
-      { image: 'src/assets/mypigfarm/11.png' },
-      { image: 'src/assets/mypigfarm/12.png' },
-      { image: 'src/assets/mypigfarm/13.png' },
-      { image: 'src/assets/mypigfarm/14.png' },
-      { image: 'src/assets/mypigfarm/15.png' },
-      { image: 'src/assets/mypigfarm/16.png' },
+      { image: mypigfarm1 },
+      { image: mypigfarm2 },
+      { image: mypigfarm3 },
+      { image: mypigfarm4 },
+      { image: mypigfarm5 },
+      { image: mypigfarm6 },
+      { image: mypigfarm7 },
+      { image: mypigfarm8 },
+      { image: mypigfarm9 },
+      { image: mypigfarm10 },
+      { image: mypigfarm11 },
+      { image: mypigfarm12 },
+      { image: mypigfarm13 },
+      { image: mypigfarm14 },
+      { image: mypigfarm15 },
+      { image: mypigfarm16 },
     ],
     informationsList: [
       {
@@ -330,13 +448,13 @@ export default [
     id: 3,
     color: '#327ab7',
     background: '#d6e4f0',
-    title: 'Inventory Management (IM) Mobile',
+    title: 'Charoen Pokphand Indonesia Commerce (CPIC)',
     role: 'UI / UX Designer',
-    displayImage: 'src/assets/posters/cpic.jpg',
+    displayImage: cpic,
     company: 'PT Charoen Pokphand Indonesia Tbk',
     platform: 'Mobile Application',
     platformIcon: mobile,
-    dialogImage: 'src/assets/posters/cpic.jpg',
+    dialogImage: cpic,
     description:
       'CPI Commerce (CPIC) is an innovative mobile app designed to streamline and simplify the management of Purchase Requisitions (PR) and access to CPIs e-Townhall. With its user-friendly interface and robust features, CPIC ensures efficient procurement workflows and smooth document management.',
     spline: 'https://my.spline.design/cpic-2e4dc3f067349853e7397eb4ac78c7d0/',
@@ -361,17 +479,17 @@ export default [
     toolsList: [
       {
         tool: 'Figma',
-        icon: 'src/assets/Figma-logo.png',
+        icon: figma,
         background: '#c8e6c9',
       },
       {
         tool: 'Canva',
-        icon: 'src/assets/Canva-icon.png',
+        icon: canva,
         background: '#c8e6c9',
       },
       {
         tool: 'Office',
-        icon: 'src/assets/MSOffice-logo.png',
+        icon: msoffice,
         background: '#c8e6c9',
       },
     ],
@@ -412,22 +530,22 @@ export default [
       },
     ],
     screenshots: [
-      { image: 'src/assets/cpic/1.png' },
-      { image: 'src/assets/cpic/2.png' },
-      { image: 'src/assets/cpic/3.png' },
-      { image: 'src/assets/cpic/4.png' },
-      { image: 'src/assets/cpic/5.png' },
-      { image: 'src/assets/cpic/6.png' },
-      { image: 'src/assets/cpic/7.png' },
-      { image: 'src/assets/cpic/8.png' },
-      { image: 'src/assets/cpic/9.png' },
-      { image: 'src/assets/cpic/10.png' },
-      { image: 'src/assets/cpic/11.png' },
-      { image: 'src/assets/cpic/12.png' },
-      { image: 'src/assets/cpic/13.png' },
-      { image: 'src/assets/cpic/14.png' },
-      { image: 'src/assets/cpic/15.png' },
-      { image: 'src/assets/cpic/16.png' },
+      { image: cpic1 },
+      { image: cpic2 },
+      { image: cpic3 },
+      { image: cpic4 },
+      { image: cpic5 },
+      { image: cpic6 },
+      { image: cpic7 },
+      { image: cpic8 },
+      { image: cpic9 },
+      { image: cpic10 },
+      { image: cpic11 },
+      { image: cpic12 },
+      { image: cpic13 },
+      { image: cpic14 },
+      { image: cpic15 },
+      { image: cpic16 },
     ],
     informationsList: [
       {
@@ -468,11 +586,11 @@ export default [
     background: '#d1e3f6',
     title: 'E-Comdiv',
     role: 'UX Engineer',
-    displayImage: 'src/assets/posters/e-comdiv.jpg',
+    displayImage: ecomdiv,
     company: 'PT Charoen Pokphand Indonesia Tbk',
     platform: 'Web Application',
     platformIcon: web,
-    dialogImage: 'src/assets/posters/e-comdiv.jpg',
+    dialogImage: ecomdiv,
     description:
       'E-Comdiv is a web application that simplifies procurement by enabling registered users to order goods and services online. It connects users with preferred suppliers through a centralized system, automating tasks like purchase orders, invoicing, and supplier management to save time and reduce costs',
     spline:
@@ -511,37 +629,37 @@ export default [
     toolsList: [
       {
         tool: 'HTML5',
-        icon: 'src/assets/HTML5-Badge.png',
+        icon: html,
         background: '#d1e3f6',
       },
       {
         tool: 'CSS',
-        icon: 'src/assets/CSS3-logo.png',
+        icon: css,
         background: '#d1e3f6',
       },
       {
         tool: 'JS',
-        icon: 'src/assets/Javascript-logo.png',
+        icon: javascript,
         background: '#d1e3f6',
       },
       {
         tool: 'TS',
-        icon: 'src/assets/Typescript-logo.png',
+        icon: typescript,
         background: '#d1e3f6',
       },
       {
         tool: 'Vue3',
-        icon: 'src/assets/Vue-logo.png',
+        icon: vue3,
         background: '#d1e3f6',
       },
       {
         tool: 'Quasar',
-        icon: 'src/assets/quasar.png',
+        icon: quasar,
         background: '#d1e3f6',
       },
       {
         tool: 'Git',
-        icon: 'src/assets/Git-Icon.png',
+        icon: git,
         background: '#d1e3f6',
       },
     ],
@@ -582,19 +700,22 @@ export default [
       },
     ],
     screenshots: [
-      { image: 'src/assets/ecomdiv/1.png' },
-      { image: 'src/assets/ecomdiv/2.png' },
-      { image: 'src/assets/ecomdiv/3.png' },
-      { image: 'src/assets/ecomdiv/4.png' },
-      { image: 'src/assets/ecomdiv/5.png' },
-      { image: 'src/assets/ecomdiv/6.png' },
-      { image: 'src/assets/ecomdiv/7.png' },
-      { image: 'src/assets/ecomdiv/8.png' },
-      { image: 'src/assets/ecomdiv/9.png' },
-      { image: 'src/assets/ecomdiv/10.png' },
-      { image: 'src/assets/ecomdiv/11.png' },
-      { image: 'src/assets/ecomdiv/12.png' },
-      { image: 'src/assets/ecomdiv/13.png' },
+      { image: ecomdiv1 },
+      { image: ecomdiv2 },
+      { image: ecomdiv3 },
+      { image: ecomdiv4 },
+      { image: ecomdiv5 },
+      { image: ecomdiv6 },
+      { image: ecomdiv7 },
+      { image: ecomdiv8 },
+      { image: ecomdiv9 },
+      { image: ecomdiv10 },
+      { image: ecomdiv11 },
+      { image: ecomdiv12 },
+      { image: ecomdiv13 },
+      { image: ecomdiv14 },
+      { image: ecomdiv15 },
+      { image: ecomdiv16 },
     ],
     informationsList: [
       {
@@ -636,11 +757,11 @@ export default [
     background: '#d6d6ea',
     title: 'Customer Persona',
     role: 'UX Engineer',
-    displayImage: 'src/assets/posters/customerpersona.png',
+    displayImage: cp,
     company: 'PT Charoen Pokphand Indonesia Tbk',
     platform: 'Web Application',
     platformIcon: web,
-    dialogImage: 'src/assets/posters/customerpersona.png',
+    dialogImage: cp,
     description:
       'Customer Persona is a web application that helps users to find all information related to customers in PT. Charoen Pokphand Indonesia Tbk company. With this web app, it can improve services for searching all information related to customer.',
     spline:
@@ -686,37 +807,37 @@ export default [
     toolsList: [
       {
         tool: 'HTML5',
-        icon: 'src/assets/HTML5-Badge.png',
+        icon: html,
         background: '#d1e3f6',
       },
       {
         tool: 'CSS',
-        icon: 'src/assets/CSS3-logo.png',
+        icon: css,
         background: '#d1e3f6',
       },
       {
         tool: 'JS',
-        icon: 'src/assets/Javascript-logo.png',
+        icon: javascript,
         background: '#d1e3f6',
       },
       {
         tool: 'TS',
-        icon: 'src/assets/Typescript-logo.png',
+        icon: typescript,
         background: '#d1e3f6',
       },
       {
         tool: 'Vue3',
-        icon: 'src/assets/Vue-logo.png',
+        icon: vue3,
         background: '#d1e3f6',
       },
       {
         tool: 'Quasar',
-        icon: 'src/assets/quasar.png',
+        icon: quasar,
         background: '#d1e3f6',
       },
       {
         tool: 'Git',
-        icon: 'src/assets/Git-Icon.png',
+        icon: git,
         background: '#d1e3f6',
       },
     ],
@@ -757,18 +878,22 @@ export default [
       },
     ],
     screenshots: [
-      { image: 'src/assets/cp/1.png' },
-      { image: 'src/assets/cp/2.png' },
-      { image: 'src/assets/cp/3.png' },
-      { image: 'src/assets/cp/4.png' },
-      { image: 'src/assets/cp/5.png' },
-      { image: 'src/assets/cp/6.png' },
-      { image: 'src/assets/cp/7.png' },
-      { image: 'src/assets/cp/8.png' },
-      { image: 'src/assets/cp/9.png' },
-      { image: 'src/assets/cp/10.png' },
-      { image: 'src/assets/cp/11.png' },
-      { image: 'src/assets/cp/12.png' },
+      { image: cp1 },
+      { image: cp2 },
+      { image: cp3 },
+      { image: cp4 },
+      { image: cp5 },
+      { image: cp6 },
+      { image: cp7 },
+      { image: cp8 },
+      { image: cp9 },
+      { image: cp10 },
+      { image: cp11 },
+      { image: cp12 },
+      { image: cp13 },
+      { image: cp14 },
+      { image: cp15 },
+      { image: cp16 },
     ],
     informationsList: [
       {
@@ -809,11 +934,11 @@ export default [
     background: '#dbefdc',
     title: 'BC Tech',
     role: 'Front End Developer',
-    displayImage: 'src/assets/posters/bctech.jpg',
+    displayImage: bctech,
     company: 'PT BISI International Tbk',
     platform: 'Web Application',
     platformIcon: web,
-    dialogImage: 'src/assets/posters/bctech.jpg',
+    dialogImage: bctech,
     description:
       'BC Tech is a streamlined content management system for an authorized DJI partner in Indonesia, enabling users to easily update website content related to drone sales. It supports efficient management of product details, promotions, and customer interactions, helping the business maintain a professional online presence and optimize its operations.',
     spline: 'https://my.spline.design/bctech-82ccc6217aa804768dee045ce83ece76/',
@@ -854,37 +979,37 @@ export default [
     toolsList: [
       {
         tool: 'HTML5',
-        icon: 'src/assets/HTML5-Badge.png',
+        icon: html,
         background: '#d1e3f6',
       },
       {
         tool: 'CSS',
-        icon: 'src/assets/CSS3-logo.png',
+        icon: css,
         background: '#d1e3f6',
       },
       {
         tool: 'JS',
-        icon: 'src/assets/Javascript-logo.png',
+        icon: javascript,
         background: '#d1e3f6',
       },
       {
         tool: 'TS',
-        icon: 'src/assets/Typescript-logo.png',
+        icon: typescript,
         background: '#d1e3f6',
       },
       {
         tool: 'Vue3',
-        icon: 'src/assets/Vue-logo.png',
+        icon: vue3,
         background: '#d1e3f6',
       },
       {
         tool: 'Quasar',
-        icon: 'src/assets/quasar.png',
+        icon: quasar,
         background: '#d1e3f6',
       },
       {
         tool: 'Git',
-        icon: 'src/assets/Git-Icon.png',
+        icon: git,
         background: '#d1e3f6',
       },
     ],
@@ -928,20 +1053,22 @@ export default [
       },
     ],
     screenshots: [
-      { image: 'src/assets/bctech/1.png' },
-      { image: 'src/assets/bctech/2.png' },
-      { image: 'src/assets/bctech/3.png' },
-      { image: 'src/assets/bctech/4.png' },
-      { image: 'src/assets/bctech/5.png' },
-      { image: 'src/assets/bctech/6.png' },
-      { image: 'src/assets/bctech/7.png' },
-      { image: 'src/assets/bctech/9.png' },
-      { image: 'src/assets/bctech/10.png' },
-      { image: 'src/assets/bctech/11.png' },
-      { image: 'src/assets/bctech/13.png' },
-      { image: 'src/assets/bctech/14.png' },
-      { image: 'src/assets/bctech/15.png' },
-      { image: 'src/assets/bctech/16.png' },
+      { image: bctech1 },
+      { image: bctech2 },
+      { image: bctech3 },
+      { image: bctech4 },
+      { image: bctech5 },
+      { image: bctech6 },
+      { image: bctech7 },
+      { image: bctech8 },
+      { image: bctech9 },
+      { image: bctech10 },
+      { image: bctech11 },
+      { image: bctech12 },
+      { image: bctech13 },
+      { image: bctech14 },
+      { image: bctech15 },
+      { image: bctech16 },
     ],
     informationsList: [
       {
