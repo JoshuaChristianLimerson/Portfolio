@@ -81,9 +81,6 @@ import ecomdiv10 from 'src/assets/ecomdiv/10.png';
 import ecomdiv11 from 'src/assets/ecomdiv/11.png';
 import ecomdiv12 from 'src/assets/ecomdiv/12.png';
 import ecomdiv13 from 'src/assets/ecomdiv/13.png';
-import ecomdiv14 from 'src/assets/ecomdiv/14.png';
-import ecomdiv15 from 'src/assets/ecomdiv/15.png';
-import ecomdiv16 from 'src/assets/ecomdiv/16.png';
 //cpic
 import cp1 from 'src/assets/cp/1.png';
 import cp2 from 'src/assets/cp/2.png';
@@ -97,10 +94,6 @@ import cp9 from 'src/assets/cp/9.png';
 import cp10 from 'src/assets/cp/10.png';
 import cp11 from 'src/assets/cp/11.png';
 import cp12 from 'src/assets/cp/12.png';
-import cp13 from 'src/assets/cp/13.png';
-import cp14 from 'src/assets/cp/14.png';
-import cp15 from 'src/assets/cp/15.png';
-import cp16 from 'src/assets/cp/16.png';
 //bctech
 import bctech1 from 'src/assets/bctech/1.png';
 import bctech2 from 'src/assets/bctech/2.png';
@@ -116,8 +109,6 @@ import bctech11 from 'src/assets/bctech/11.png';
 import bctech12 from 'src/assets/bctech/12.png';
 import bctech13 from 'src/assets/bctech/13.png';
 import bctech14 from 'src/assets/bctech/14.png';
-import bctech15 from 'src/assets/bctech/15.png';
-import bctech16 from 'src/assets/bctech/16.png';
 
 export default [
   {
@@ -713,9 +704,6 @@ export default [
       { image: ecomdiv11 },
       { image: ecomdiv12 },
       { image: ecomdiv13 },
-      { image: ecomdiv14 },
-      { image: ecomdiv15 },
-      { image: ecomdiv16 },
     ],
     informationsList: [
       {
@@ -890,10 +878,6 @@ export default [
       { image: cp10 },
       { image: cp11 },
       { image: cp12 },
-      { image: cp13 },
-      { image: cp14 },
-      { image: cp15 },
-      { image: cp16 },
     ],
     informationsList: [
       {
@@ -1067,8 +1051,6 @@ export default [
       { image: bctech12 },
       { image: bctech13 },
       { image: bctech14 },
-      { image: bctech15 },
-      { image: bctech16 },
     ],
     informationsList: [
       {

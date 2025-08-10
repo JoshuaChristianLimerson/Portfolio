@@ -379,12 +379,12 @@
               <q-timeline color="primary">
                 <q-timeline-entry
                   title="PT Charoen Pokphand Indonesia Tbk"
-                  subtitle="August 2022 - Present (2 Years 7 Months)"
+                  :subtitle="timelineSubtitle2022"
                 >
                   <q-timeline color="primary">
                     <q-timeline-entry
                       title="Ux Engineer"
-                      subtitle="March 2023 - Present (2 Years)"
+                      :subtitle="timelineSubtitle"
                     >
                       <div class="text-subtitle1">
                         <ul class="jobDesc">
@@ -1099,10 +1099,79 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, onUnmounted, reactive, ref } from 'vue';
+import { onMounted, onUnmounted, reactive, ref, computed, Ref } from 'vue';
 import ChipList from 'src/components/chipList.vue';
 import Typed from 'typed.js';
 import { QIcon, QScrollArea } from 'quasar';
+
+// Define the start date
+const startDate: Date = new Date('2023-03-01');
+
+// Create a computed property to calculate the duration
+const duration: Ref<string> = computed(() => {
+  const now: Date = new Date();
+
+  // Calculate the total number of months between the two dates
+  let months: number = (now.getFullYear() - startDate.getFullYear()) * 12;
+  months -= startDate.getMonth();
+  months += now.getMonth();
+
+  // Calculate years and remaining months
+  const years: number = Math.floor(months / 12);
+  const remainingMonths: number = months % 12;
+
+  let result: string = '';
+  if (years > 0) {
+    result += `${years} Year${years > 1 ? 's' : ''}`;
+  }
+  if (remainingMonths > 0) {
+    if (result) {
+      result += ' and ';
+    }
+    result += `${remainingMonths} Month${remainingMonths > 1 ? 's' : ''}`;
+  }
+
+  return result;
+});
+
+// Create a computed property for the full subtitle string
+const timelineSubtitle: Ref<string> = computed(() => {
+  // Use the calculated duration in the final subtitle
+  return `March 2023 - Present (${duration.value})`;
+});
+
+// Define the start date for the second entry
+const startDate2022: Date = new Date('2022-08-01');
+
+// Create a computed property to calculate the duration for the second entry
+const duration2022: Ref<string> = computed(() => {
+  const now: Date = new Date();
+
+  let months: number = (now.getFullYear() - startDate2022.getFullYear()) * 12;
+  months -= startDate2022.getMonth();
+  months += now.getMonth();
+
+  const years: number = Math.floor(months / 12);
+  const remainingMonths: number = months % 12;
+
+  let result: string = '';
+  if (years > 0) {
+    result += `${years} Year${years > 1 ? 's' : ''}`;
+  }
+  if (remainingMonths > 0) {
+    if (result) {
+      result += ' and ';
+    }
+    result += `${remainingMonths} Month${remainingMonths > 1 ? 's' : ''}`;
+  }
+
+  return result;
+});
+
+// Create a computed property for the full subtitle string for the second entry
+const timelineSubtitle2022: Ref<string> = computed(() => {
+  return `August 2022 - Present (${duration2022.value})`;
+});
 
 //data
 import dialogData from 'src/components/data/dialogData.js';
@@ -1165,6 +1234,7 @@ import css from 'src/assets/CSS3-logo.png';
 import javascript from 'src/assets/Javascript-logo.png';
 import typescript from 'src/assets/Typescript-logo.png';
 import vue3 from 'src/assets/Vue-logo.png';
+import nuxt from 'src/assets/nuxt.png';
 import photoshop from 'src/assets/Photoshop.png';
 import premierpro from 'src/assets/AdobePP-icon.png';
 import quasar from 'src/assets/quasar.png';
@@ -1289,6 +1359,7 @@ const chips = [
   { color: '#e9e9e9', text: 'Javascript', image: javascript },
   { color: '#e9e9e9', text: 'Typescript', image: typescript },
   { color: '#e9e9e9', text: 'Vue3', image: vue3 },
+  { color: '#e9e9e9', text: 'NuxtJs', image: nuxt },
   { color: '#e9e9e9', text: 'Quasar', image: quasar },
   { color: '#e9e9e9', text: 'Photoshop', image: photoshop },
   { color: '#e9e9e9', text: 'Premier pro', image: premierpro },
