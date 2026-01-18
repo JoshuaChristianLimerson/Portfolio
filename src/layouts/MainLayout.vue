@@ -96,7 +96,12 @@
   <div class="container">
     <div class="gradient-background row justify-center items-center" id="home">
       <!-- <router-view /> -->
-      <div class="column" style="padding-left: 7px; padding-right: 7px">
+      <div
+        class="column"
+        style="padding-left: 7px; padding-right: 7px"
+        data-aos="zoom-in"
+        data-aos-duration="1500"
+      >
         <q-card bordered class="my-card q-px-lg">
           <div class="card-content">
             <q-card-section>
@@ -268,77 +273,75 @@
     </div>
     <div id="about">
       <div class="row background-size">
-        <transition
-          appear
-          enter-active-class="animated fadeInLeftBig slower"
-          leave-active-class="animated fadeInRightBig slower"
+        <div
+          data-aos="fade-right"
+          data-aos-duration="600"
+          class="col-12 col-md-4 column container-about-image"
+          style="max-width: 100%; z-index: 2; text-align: center"
         >
-          <div
-            class="col-12 col-md-4 column container-about-image"
-            style="max-width: 100%; z-index: 2; text-align: center"
-          >
-            <q-img
-              src="../assets/polaroid.png"
-              style="
-                width: 400px;
-                max-width: 100%;
-                object-fit: contain;
-                margin: auto;
-              "
-            />
+          <q-img
+            src="../assets/polaroid.png"
+            style="
+              width: 400px;
+              max-width: 100%;
+              object-fit: contain;
+              margin: auto;
+            "
+          />
+        </div>
+
+        <div
+          data-aos="fade-left"
+          data-aos-duration="600"
+          class="col-12 col-md-8 column container-about-desc"
+          style="max-width: 100%; z-index: 2"
+        >
+          <div style="max-width: 100%">
+            <p
+              class="text-primary text-weight-medium row"
+              :class="$q.screen.gt.sm ? '' : 'justify-center text-center'"
+            >
+              I am Joshua Christian Limerson,
+            </p>
+            <p
+              class="text-blue-grey text-subtitle1 text-justify"
+              :class="$q.screen.gt.sm ? 'q-pr-xl' : 'q-px-md'"
+            >
+              I am a graduate Computer Science (Global Class) student on BINUS
+              UNIVERSITY. My passion on Computer Science subject itself lies on
+              UI/UX Designer, Front-End Development, and animations. I always
+              wanted to learn more about how can I improve my passion and ideas
+              and to see new opportunities to expand my skills in every aspect.
+            </p>
           </div>
-        </transition>
-        <transition
-          appear
-          enter-active-class="animated fadeInRightBig slower"
-          leave-active-class="animated fadeOut"
-        >
+          <div style="height: 200px" v-if="$q.screen.gt.sm"></div>
           <div
-            class="col-12 col-md-8 column container-about-desc"
-            style="max-width: 100%; z-index: 2"
+            v-if="!$q.screen.gt.sm"
+            class="q-py-md"
+            data-aos="fade-right"
+            data-aos-duration="600"
           >
-            <div style="max-width: 100%">
-              <p
-                class="text-primary text-weight-medium row"
-                :class="$q.screen.gt.sm ? '' : 'justify-center text-center'"
-              >
-                I am Joshua Christian Limerson,
-              </p>
-              <p
-                class="text-blue-grey text-subtitle1 text-justify"
-                :class="$q.screen.gt.sm ? 'q-pr-xl' : 'q-px-md'"
-              >
-                I am a graduate Computer Science (Global Class) student on BINUS
-                UNIVERSITY. My passion on Computer Science subject itself lies
-                on UI/UX Designer, Front-End Development, and animations. I
-                always wanted to learn more about how can I improve my passion
-                and ideas and to see new opportunities to expand my skills in
-                every aspect.
-              </p>
-            </div>
-            <div style="height: 200px" v-if="$q.screen.gt.sm"></div>
-            <div v-if="!$q.screen.gt.sm" class="q-py-md">
-              <div
-                class="col-12 q-pa-md"
-                style="background-image: linear-gradient(#1976d2, #42a5f0)"
-              >
-                <p class="text-white text-h5 text-weight-medium">Skills</p>
-                <ChipList :chips="chips" />
-              </div>
-            </div>
-            <div class="row q-mb-md">
-              <div
-                v-for="(item, index) in infoList"
-                :key="index"
-                class="col-12 col-sm-6 q-pb-md"
-              >
-                <q-icon name="chevron_right" size="sm" color="primary" />
-                <strong class="text-h6 q-pr-md">{{ item.label }}:</strong>
-                <span class="text-h6 text-weight-light">{{ item.value }}</span>
-              </div>
+            <div
+              class="col-12 q-pa-md"
+              style="background-image: linear-gradient(#1976d2, #42a5f0)"
+            >
+              <p class="text-white text-h5 text-weight-medium">Skills</p>
+              <ChipList :chips="chips" />
             </div>
           </div>
-        </transition>
+          <div class="row q-mb-md">
+            <div
+              v-for="(item, index) in infoList"
+              :key="index"
+              class="col-12 col-sm-6 q-pb-md"
+            >
+              <q-icon name="chevron_right" size="sm" color="primary" />
+              <strong class="text-h6 q-pr-md">{{ item.label }}:</strong>
+              <span class="text-h6 text-weight-light">{{ item.value }}</span>
+            </div>
+          </div>
+        </div>
+
         <div class="row container-about-divider" v-if="$q.screen.gt.sm">
           <q-space class="col-md-4" />
           <div class="col-12 col-md-8 q-px-md">
@@ -348,7 +351,7 @@
         </div>
       </div>
       <section id="resume" class="resume background-size">
-        <div class="container" data-aos="fade-up">
+        <div class="container">
           <div class="row text-center items-center justify-center q-my-xl">
             <q-separator
               class="col-4"
@@ -385,6 +388,7 @@
                     <q-timeline-entry
                       title="Ux Engineer"
                       :subtitle="timelineSubtitle"
+                      data-aos="fade-up"
                     >
                       <div class="text-subtitle1">
                         <ul class="jobDesc">
@@ -421,6 +425,7 @@
                     <q-timeline-entry
                       title="Web Developer Intern"
                       subtitle="August 2022 - February 2023 (7 Months)"
+                      data-aos="fade-up"
                     >
                       <div
                         :class="
@@ -468,6 +473,7 @@
                 <q-timeline-entry
                   title="Xi'an Jiaotong-Liverpool University"
                   subtitle="February 2022 - June 2022"
+                  data-aos="fade-up"
                 >
                   <div class="text-subtitle1">
                     <q-icon style="margin-right: 5px">
@@ -483,6 +489,7 @@
                 <q-timeline-entry
                   title="Binus University"
                   subtitle="September 2019 - July 2023"
+                  data-aos="fade-up"
                 >
                   <div class="text-subtitle1">
                     <q-icon style="margin-right: 5px">
@@ -500,6 +507,7 @@
                 <q-timeline-entry
                   title="SMA Mondial Batam"
                   subtitle="2016 - 2019"
+                  data-aos="fade-up"
                 >
                   <div class="text-subtitle1">
                     <q-icon style="margin-right: 5px">
@@ -514,6 +522,7 @@
                 <q-timeline-entry
                   title="SMP Mondial Batam"
                   subtitle="2013 - 2016"
+                  data-aos="fade-up"
                 >
                   <div class="text-subtitle1">
                     <q-icon style="margin-right: 5px">
@@ -526,6 +535,7 @@
                 <q-timeline-entry
                   title="SD Mondial Batam"
                   subtitle="2007 - 2013"
+                  data-aos="fade-up"
                 >
                   <div class="text-subtitle1">
                     <q-icon style="margin-right: 5px">
@@ -570,6 +580,7 @@
           v-for="(card, index) in cardsContent"
           :key="index"
           class="col-12 col-md-4 q-pa-md"
+          data-aos="flip-left"
         >
           <q-card
             style="border-radius: 12px"
@@ -707,7 +718,7 @@
                           :src="datas[hoveredIndex].displayImage"
                           style="border-radius: 16px"
                           :ratio="16 / 9"
-                          fit
+                          fill
                         />
                       </q-card-section>
                     </q-card>
@@ -1103,6 +1114,8 @@ import { onMounted, onUnmounted, reactive, ref, computed, Ref } from 'vue';
 import ChipList from 'src/components/chipList.vue';
 import Typed from 'typed.js';
 import { QIcon, QScrollArea } from 'quasar';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 // Define the start date
 const startDate: Date = new Date('2023-03-01');
@@ -1279,6 +1292,8 @@ const scrollToTop = () => {
 };
 
 onMounted(() => {
+  AOS.init();
+
   const typedElement = document.querySelector('.typed') as HTMLElement | null;
 
   if (typedElement) {
